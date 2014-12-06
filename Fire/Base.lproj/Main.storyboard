@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="OB5-Fq-MJx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -44,7 +44,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zy9-Dr-xCl">
-                                <rect key="frame" x="290" y="469" width="183" height="30"/>
+                                <rect key="frame" x="359" y="489" width="183" height="30"/>
                                 <state key="normal" title="Input Emergency Contacts">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -76,56 +76,34 @@
             </objects>
             <point key="canvasLocation" x="398" y="300"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="jfT-VC-ZRO">
+        <!--Table View Controller2-->
+        <scene sceneID="eGE-aX-3WN">
             <objects>
-                <viewController id="qcU-bG-l4o" customClass="TableViewController" customModule="Fire" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="zu9-zu-snU"/>
-                        <viewControllerLayoutGuide type="bottom" id="h6P-rX-evk"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8Wu-eJ-PHg">
+                <tableViewController id="jHg-GI-mg3" customClass="TableViewController2" customModule="Fire" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="RlN-xD-TbY">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="m3u-T6-Ts4">
-                                <rect key="frame" x="0.0" y="20" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="600" id="69i-UF-EUy"/>
-                                </constraints>
-                                <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="sectionIndexColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <tableView key="tableFooterView" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="6cp-jm-rRh">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </tableView>
-                                <connections>
-                                    <outlet property="dataSource" destination="qcU-bG-l4o" id="0QJ-6g-zI4"/>
-                                    <outlet property="delegate" destination="qcU-bG-l4o" id="BEI-ek-KQo"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="m3u-T6-Ts4" secondAttribute="centerX" id="GB8-ym-ta0"/>
-                            <constraint firstItem="m3u-T6-Ts4" firstAttribute="height" secondItem="8Wu-eJ-PHg" secondAttribute="height" id="dnB-dm-AEN"/>
-                            <constraint firstItem="m3u-T6-Ts4" firstAttribute="top" secondItem="zu9-zu-snU" secondAttribute="bottom" constant="21" id="pij-RA-Sgl"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="pij-RA-Sgl"/>
-                            </mask>
-                        </variation>
-                    </view>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3xs-5e-xvE">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3xs-5e-xvE" id="ySc-vh-Djk">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="jHg-GI-mg3" id="j5s-qx-SpY"/>
+                            <outlet property="delegate" destination="jHg-GI-mg3" id="6gg-Au-2se"/>
+                        </connections>
+                    </tableView>
                     <connections>
-                        <outlet property="tblContacts" destination="m3u-T6-Ts4" id="PC3-YX-t45"/>
+                        <outlet property="tblContacts" destination="RlN-xD-TbY" id="5lq-SX-L33"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kb0-9Y-UUO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F27-cC-8eI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-451" y="450"/>
+            <point key="canvasLocation" x="-953" y="386"/>
         </scene>
         <!--Contacts View Controller-->
         <scene sceneID="aZf-pp-9wJ">
@@ -167,8 +145,8 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="btnAddContact_Click:" destination="cUn-jp-Yls" eventType="touchUpInside" id="fxb-mJ-hC6"/>
-                                    <segue destination="qcU-bG-l4o" kind="modal" id="Gnp-Kh-nUh"/>
+                                    <action selector="btnAddContact_Click:" destination="cUn-jp-Yls" eventType="touchUpInside" id="6BR-J8-FuZ"/>
+                                    <segue destination="jHg-GI-mg3" kind="modal" id="QvG-wM-wuu"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -256,7 +234,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q8r-Yo-aJ9" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1171" y="314"/>
+            <point key="canvasLocation" x="1141" y="278"/>
         </scene>
         <!--Detail-->
         <scene sceneID="41p-fi-W7I">

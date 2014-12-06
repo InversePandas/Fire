@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ContactsViewController: UIViewController, UITextFieldDelegate {
     
@@ -25,10 +26,44 @@ class ContactsViewController: UIViewController, UITextFieldDelegate {
     }
     
     
+    func saveEntry(name: String, text: String) {
+        //1
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext!
+        
+        //2
+        let entity =  NSEntityDescription.entityForName("Entry",
+            inManagedObjectContext:
+            managedContext)
+        
+        let entry = NSManagedObject(entity: entity!,
+            insertIntoManagedObjectContext:managedContext)
+        
+        //3
+        entry.setValue(text, forKey: "text")
+        entry.setValue(name, forKey: "name")
+        
+        
+        
+        //4
+        var error: NSError?
+        if !managedContext.save(&error) {
+            println("Could not save \(error), \(error?.userInfo)")
+        }
+        //5
+        //println("here")
+        contact_entries.append(entry)
+    }
+
+    
     // events
     @IBAction func btnAddContact_Click (sender:UIButton){
-        ContactMgr.addContact(txtName.text, phone: txtPhone.text)
+        // ContactMgr.addContact(txtName.text, phone: txtPhone.text)
+        self.saveEntry(txtName.text, text: txtPhone.text)
         self.view.endEditing(true)
+        
         
         // reset field to empty
         txtName.text = ""

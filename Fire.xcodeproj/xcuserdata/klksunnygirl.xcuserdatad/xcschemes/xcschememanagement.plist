@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>FireWidget.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +23,11 @@
 			<true/>
 		</dict>
 		<key>54580C121A32B6EB00657F29</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>54580C281A336A6000657F29</key>
 		<dict>
 			<key>primary</key>
 			<true/>

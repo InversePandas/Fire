@@ -65,7 +65,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
      * Constructs a message
     */
     func constructTxtMsg() -> String {
-        var mapURL = "https://maps.google.com/maps?q=\(self.locData.latitude),\(self.locData.longitude)"
+        var mapURL = "https://maps.google.com/maps?saddr=Current+Location&daddr=\(self.locData.latitude),\(self.locData.longitude)"
         var msg = "Please help! I'm currently in a life threatening situation and you're my number one emergency contact. You can find me here: ";
         return msg + mapURL
     }

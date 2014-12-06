@@ -16,6 +16,10 @@
 		54580C0B1A32B6EB00657F29 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54580C0A1A32B6EB00657F29 /* Images.xcassets */; };
 		54580C0E1A32B6EB00657F29 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54580C0C1A32B6EB00657F29 /* LaunchScreen.xib */; };
 		54580C1A1A32B6EB00657F29 /* FireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54580C191A32B6EB00657F29 /* FireTests.swift */; };
+		54580C2C1A336A6000657F29 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54580C2B1A336A6000657F29 /* NotificationCenter.framework */; };
+		54580C311A336A6000657F29 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54580C301A336A6000657F29 /* TodayViewController.swift */; };
+		54580C331A336A6000657F29 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54580C321A336A6000657F29 /* MainInterface.storyboard */; };
+		54580C361A336A6000657F29 /* FireWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 54580C291A336A6000657F29 /* FireWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F24B12CF1A32D497000F4B35 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24B12CE1A32D497000F4B35 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,7 +31,28 @@
 			remoteGlobalIDString = 54580BFA1A32B6EB00657F29;
 			remoteInfo = Fire;
 		};
+		54580C341A336A6000657F29 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 54580BF31A32B6EB00657F29 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 54580C281A336A6000657F29;
+			remoteInfo = FireWidget;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		54580C3A1A336A6000657F29 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				54580C361A336A6000657F29 /* FireWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		147A6DC81A32D33300DC9CAC /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -43,6 +68,11 @@
 		54580C131A32B6EB00657F29 /* FireTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FireTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		54580C181A32B6EB00657F29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54580C191A32B6EB00657F29 /* FireTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireTests.swift; sourceTree = "<group>"; };
+		54580C291A336A6000657F29 /* FireWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FireWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		54580C2B1A336A6000657F29 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		54580C2F1A336A6000657F29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54580C301A336A6000657F29 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		54580C321A336A6000657F29 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		F24B12CE1A32D497000F4B35 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,6 +91,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		54580C261A336A6000657F29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54580C2C1A336A6000657F29 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -69,6 +107,8 @@
 			children = (
 				54580BFD1A32B6EB00657F29 /* Fire */,
 				54580C161A32B6EB00657F29 /* FireTests */,
+				54580C2D1A336A6000657F29 /* FireWidget */,
+				54580C2A1A336A6000657F29 /* Frameworks */,
 				54580BFC1A32B6EB00657F29 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,6 +118,7 @@
 			children = (
 				54580BFB1A32B6EB00657F29 /* Fire.app */,
 				54580C131A32B6EB00657F29 /* FireTests.xctest */,
+				54580C291A336A6000657F29 /* FireWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -124,6 +165,32 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		54580C2A1A336A6000657F29 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				54580C2B1A336A6000657F29 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		54580C2D1A336A6000657F29 /* FireWidget */ = {
+			isa = PBXGroup;
+			children = (
+				54580C301A336A6000657F29 /* TodayViewController.swift */,
+				54580C321A336A6000657F29 /* MainInterface.storyboard */,
+				54580C2E1A336A6000657F29 /* Supporting Files */,
+			);
+			path = FireWidget;
+			sourceTree = "<group>";
+		};
+		54580C2E1A336A6000657F29 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				54580C2F1A336A6000657F29 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,10 +201,12 @@
 				54580BF71A32B6EB00657F29 /* Sources */,
 				54580BF81A32B6EB00657F29 /* Frameworks */,
 				54580BF91A32B6EB00657F29 /* Resources */,
+				54580C3A1A336A6000657F29 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				54580C351A336A6000657F29 /* PBXTargetDependency */,
 			);
 			name = Fire;
 			productName = Fire;
@@ -162,6 +231,23 @@
 			productReference = 54580C131A32B6EB00657F29 /* FireTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		54580C281A336A6000657F29 /* FireWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 54580C391A336A6000657F29 /* Build configuration list for PBXNativeTarget "FireWidget" */;
+			buildPhases = (
+				54580C251A336A6000657F29 /* Sources */,
+				54580C261A336A6000657F29 /* Frameworks */,
+				54580C271A336A6000657F29 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FireWidget;
+			productName = FireWidget;
+			productReference = 54580C291A336A6000657F29 /* FireWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -177,6 +263,9 @@
 					54580C121A32B6EB00657F29 = {
 						CreatedOnToolsVersion = 6.1.1;
 						TestTargetID = 54580BFA1A32B6EB00657F29;
+					};
+					54580C281A336A6000657F29 = {
+						CreatedOnToolsVersion = 6.1.1;
 					};
 				};
 			};
@@ -195,6 +284,7 @@
 			targets = (
 				54580BFA1A32B6EB00657F29 /* Fire */,
 				54580C121A32B6EB00657F29 /* FireTests */,
+				54580C281A336A6000657F29 /* FireWidget */,
 			);
 		};
 /* End PBXProject section */
@@ -214,6 +304,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54580C271A336A6000657F29 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54580C331A336A6000657F29 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +339,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		54580C251A336A6000657F29 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54580C311A336A6000657F29 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -248,6 +354,11 @@
 			isa = PBXTargetDependency;
 			target = 54580BFA1A32B6EB00657F29 /* Fire */;
 			targetProxy = 54580C141A32B6EB00657F29 /* PBXContainerItemProxy */;
+		};
+		54580C351A336A6000657F29 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 54580C281A336A6000657F29 /* FireWidget */;
+			targetProxy = 54580C341A336A6000657F29 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -352,6 +463,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Fire/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -362,6 +474,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Fire/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -402,6 +515,30 @@
 			};
 			name = Release;
 		};
+		54580C371A336A6000657F29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FireWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		54580C381A336A6000657F29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = FireWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -431,6 +568,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		54580C391A336A6000657F29 /* Build configuration list for PBXNativeTarget "FireWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54580C371A336A6000657F29 /* Debug */,
+				54580C381A336A6000657F29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 

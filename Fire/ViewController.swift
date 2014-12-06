@@ -17,23 +17,29 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
     // location stuff
     
     @IBOutlet var label: UILabel!
-    
-    var msg = ""
+    var msg = "test"
     
     var manager: OneShotLocationManager?
     
-    func getLocation() -> String {
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+    
+        
         //
         // request the current location
         //
-        var msgLoc = ""
         manager = OneShotLocationManager()
         manager!.fetchWithCompletion {location, error in
             
             // fetch location or an error
             if let loc = location {
-                //msgLoc = loc.description
+                
                 self.label.text = loc.description
+                self.msg = self.label.text!
+                //var fullArr =
+                println("self.label.text \(self.label.text)")
+                //self.msg = self.label.text!
+                //println(loc.description)
             } else if let err = error {
                 self.label.text = err.localizedDescription
             }
@@ -41,28 +47,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
             // destroy the object immediately to save memory
             self.manager = nil
         }
-        
-        return msgLoc
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        var msgLoc = ""
-        manager = OneShotLocationManager()
-        manager!.fetchWithCompletion {location, error in
-            
-            // fetch location or an error
-            if let loc = location {
-                msgLoc = loc.description
-                self.label.text = loc.description
-            } else if let err = error {
-                self.label.text = err.localizedDescription
-            }
-            
-            // destroy the object immediately to save memory
-            self.manager = nil
-        }
+        println(self.label.text)
     }
     
     // end location stuff
@@ -85,9 +70,8 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
     
     @IBAction func sendMessage(sender: AnyObject) {
         var messageVC = MFMessageComposeViewController()
-        var msgLoc = getLocation();
         
-        messageVC.body = "Please help! I'm currently in a life threatening situation and you're my number one emergency contact. Find me at\(msgLoc)";
+        messageVC.body = "Please help! I'm currently in a life threatening situation and you're my number one emergency contact. Find me at \(msg)";
         messageVC.recipients = ["1-408-561-0868", "1-936-250-0347"]
         messageVC.messageComposeDelegate = self;
         
@@ -97,7 +81,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         println("this coming here?")
-        println(getLocation())
         //println(self.string)
         
         //
@@ -121,14 +104,13 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
             // destroy the object immediately to save memory
             self.manager = nil
         }*/
-        var messageVC = MFMessageComposeViewController()
+        /*var messageVC = MFMessageComposeViewController()
         
         messageVC.body = "Enter a message";
         messageVC.recipients = ["1-408-561-0868", "1-936-250-0347"]
         messageVC.messageComposeDelegate = self;
         
-        // self.presentViewController(messageVC, animated: false, completion: nil)
-        
+        self.presentViewController(messageVC, animated: false, completion: nil) */
         // Do any additional setup after loading the view, typically from a nib.
     }
     

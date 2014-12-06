@@ -80,39 +80,18 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
         self.presentViewController(messageVC, animated: false, completion: nil)
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        println("this coming here?")
-        //println(self.string)
         
-        //
-        // request the current location
-        //
-        
-        // location stuff
-        /*manager = OneShotLocationManager()
-        manager!.fetchWithCompletion {location, error in
-            
-            // fetch location or an error
-            if let loc = location {
-                self.string = loc.description
-                println(loc.description)
-                println(self.string)
-                self.label.text = loc.description
-            } else if let err = error {
-                self.label.text = err.localizedDescription
-            }
-            
-            // destroy the object immediately to save memory
-            self.manager = nil
-        }*/
-        /*var messageVC = MFMessageComposeViewController()
+        var messageVC = MFMessageComposeViewController()
         
         messageVC.body = "Enter a message";
         messageVC.recipients = ["1-408-561-0868", "1-936-250-0347"]
         messageVC.messageComposeDelegate = self;
+
         
-        self.presentViewController(messageVC, animated: false, completion: nil) */
+        // self.presentViewController(messageVC, animated: false, completion: nil)
         // Do any additional setup after loading the view, typically from a nib.
     }
     

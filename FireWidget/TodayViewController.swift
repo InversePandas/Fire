@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import MessageUI
 import NotificationCenter
 
-class TodayViewController: UIViewController, NCWidgetProviding {
+class TodayViewController: UIViewController, NCWidgetProviding  {
         
     override func viewDidLoad() {
         super.viewDidLoad()

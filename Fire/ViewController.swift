@@ -34,7 +34,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
             if let loc = location {
                 //msgLoc = loc.description
                 self.label.text = loc.description
-                return loc.description
             } else if let err = error {
                 self.label.text = err.localizedDescription
             }
@@ -129,7 +128,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
         messageVC.messageComposeDelegate = self;
         
         // self.presentViewController(messageVC, animated: false, completion: nil)
-        self.presentViewController(messageVC, animated: false, completion: nil) 
         
         // Do any additional setup after loading the view, typically from a nib.
     }

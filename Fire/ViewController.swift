@@ -32,8 +32,9 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
             
             // fetch location or an error
             if let loc = location {
-                msgLoc = loc.description
+                //msgLoc = loc.description
                 self.label.text = loc.description
+                return loc.description
             } else if let err = error {
                 self.label.text = err.localizedDescription
             }

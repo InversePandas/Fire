@@ -9,10 +9,13 @@
 import UIKit
 import MessageUI
 import CoreLocation
+import CoreData
+import Foundation
 
 
 class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
    
+    @IBOutlet var txtTest:UITextField!
     
     // (Lat,Long) of user
     var locData: CLLocationCoordinate2D!
@@ -70,11 +73,45 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
         return msg + mapURL
     }
     
+    
+    func getContactNumbers() -> NSMutableArray{
+        
+        //1
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext!
+        
+        // 2
+        let fetchRequest = NSFetchRequest(entityName:"Entry")
+        
+        //3
+        var error: NSError?
+        
+        let fetchedResults =
+        managedContext.executeFetchRequest(fetchRequest,
+            error: &error) as [NSManagedObject]?
+        
+        if let results = fetchedResults {
+            contact_entries = results
+        } else {
+            println("Could not fetch \(error), \(error!.userInfo)")
+        }
+        
+        var phoneNumbers: NSMutableArray = NSMutableArray()
+        for entry in contact_entries {
+            var phone: String = entry.valueForKey("text") as String
+            phoneNumbers.addObject(phone)
+        }
+        
+        return phoneNumbers
+    }
+    
     @IBAction func sendMessage(sender: AnyObject) {
         var messageVC = MFMessageComposeViewController()
         
         messageVC.body = constructTxtMsg()
-        messageVC.recipients = ["1-408-561-0868", "1-936-250-0347"]
+        messageVC.recipients = getContactNumbers()
         messageVC.messageComposeDelegate = self;
         
         self.presentViewController(messageVC, animated: false, completion: nil)
@@ -87,8 +124,11 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
         var messageVC = MFMessageComposeViewController()
         
         messageVC.body = "Enter a message";
-        messageVC.recipients = ["1-408-561-0868", "1-936-250-0347"]
+        messageVC.recipients = getContactNumbers()
         messageVC.messageComposeDelegate = self;
+        
+        // test contact numbers
+        getContactNumbers()
 
         
         // self.presentViewController(messageVC, animated: false, completion: nil)

@@ -117,11 +117,7 @@ class TableViewController2: UITableViewController {
         return 1
     }
     
-    /*override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // return objects.count
-        return 0
-    }
-    
+    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
         

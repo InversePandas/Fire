@@ -45,7 +45,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
         messageVC.recipients = ["1-408-561-0868", "1-936-250-0347"]
         messageVC.messageComposeDelegate = self;
         
-        self.presentViewController(messageVC, animated: false, completion: nil)
+        // self.presentViewController(messageVC, animated: false, completion: nil)
         // Do any additional setup after loading the view, typically from a nib.
     }
     

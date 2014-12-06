@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		147A6DCA1A32D33300DC9CAC /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147A6DC81A32D33300DC9CAC /* MasterViewController.swift */; };
+		147A6DCB1A32D33300DC9CAC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147A6DC91A32D33300DC9CAC /* DetailViewController.swift */; };
 		54580C011A32B6EB00657F29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54580C001A32B6EB00657F29 /* AppDelegate.swift */; };
 		54580C041A32B6EB00657F29 /* Fire.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 54580C021A32B6EB00657F29 /* Fire.xcdatamodeld */; };
 		54580C061A32B6EB00657F29 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54580C051A32B6EB00657F29 /* ViewController.swift */; };
@@ -27,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		147A6DC81A32D33300DC9CAC /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		147A6DC91A32D33300DC9CAC /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		54580BFB1A32B6EB00657F29 /* Fire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54580BFF1A32B6EB00657F29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54580C001A32B6EB00657F29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 			children = (
 				54580C001A32B6EB00657F29 /* AppDelegate.swift */,
 				54580C051A32B6EB00657F29 /* ViewController.swift */,
+				147A6DC81A32D33300DC9CAC /* MasterViewController.swift */,
+				147A6DC91A32D33300DC9CAC /* DetailViewController.swift */,
 				54580C071A32B6EB00657F29 /* Main.storyboard */,
 				54580C0A1A32B6EB00657F29 /* Images.xcassets */,
 				54580C0C1A32B6EB00657F29 /* LaunchScreen.xib */,
@@ -215,7 +221,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				147A6DCA1A32D33300DC9CAC /* MasterViewController.swift in Sources */,
 				54580C061A32B6EB00657F29 /* ViewController.swift in Sources */,
+				147A6DCB1A32D33300DC9CAC /* DetailViewController.swift in Sources */,
 				54580C011A32B6EB00657F29 /* AppDelegate.swift in Sources */,
 				54580C041A32B6EB00657F29 /* Fire.xcdatamodeld in Sources */,
 			);
@@ -409,6 +417,7 @@
 				54580C1F1A32B6EB00657F29 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		54580C201A32B6EB00657F29 /* Build configuration list for PBXNativeTarget "FireTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +426,7 @@
 				54580C221A32B6EB00657F29 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

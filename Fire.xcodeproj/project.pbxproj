@@ -21,6 +21,10 @@
 		54580C331A336A6000657F29 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54580C321A336A6000657F29 /* MainInterface.storyboard */; };
 		54580C361A336A6000657F29 /* FireWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 54580C291A336A6000657F29 /* FireWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F24B12CF1A32D497000F4B35 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24B12CE1A32D497000F4B35 /* LocationManager.swift */; };
+		F24B12D11A337FE9000F4B35 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24B12D01A337FE9000F4B35 /* ContactsViewController.swift */; };
+		F24B12D31A33805F000F4B35 /* ContactManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24B12D21A33805F000F4B35 /* ContactManager.swift */; };
+		F24B12D51A33886F000F4B35 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24B12D41A33886F000F4B35 /* TableViewController.swift */; };
+		F24B12D81A33924D000F4B35 /* phonebook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F24B12D61A33924D000F4B35 /* phonebook.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +78,10 @@
 		54580C301A336A6000657F29 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		54580C321A336A6000657F29 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		F24B12CE1A32D497000F4B35 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		F24B12D01A337FE9000F4B35 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		F24B12D21A33805F000F4B35 /* ContactManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactManager.swift; sourceTree = "<group>"; };
+		F24B12D41A33886F000F4B35 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		F24B12D71A33924D000F4B35 /* phonebook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = phonebook.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,10 +136,14 @@
 			children = (
 				F24B12CE1A32D497000F4B35 /* LocationManager.swift */,
 				54580C001A32B6EB00657F29 /* AppDelegate.swift */,
+				F24B12D61A33924D000F4B35 /* phonebook.xcdatamodeld */,
 				54580C051A32B6EB00657F29 /* ViewController.swift */,
+				F24B12D41A33886F000F4B35 /* TableViewController.swift */,
 				147A6DC81A32D33300DC9CAC /* MasterViewController.swift */,
 				147A6DC91A32D33300DC9CAC /* DetailViewController.swift */,
 				54580C071A32B6EB00657F29 /* Main.storyboard */,
+				F24B12D01A337FE9000F4B35 /* ContactsViewController.swift */,
+				F24B12D21A33805F000F4B35 /* ContactManager.swift */,
 				54580C0A1A32B6EB00657F29 /* Images.xcassets */,
 				54580C0C1A32B6EB00657F29 /* LaunchScreen.xib */,
 				54580C021A32B6EB00657F29 /* Fire.xcdatamodeld */,
@@ -323,11 +335,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				147A6DCA1A32D33300DC9CAC /* MasterViewController.swift in Sources */,
+				F24B12D11A337FE9000F4B35 /* ContactsViewController.swift in Sources */,
 				F24B12CF1A32D497000F4B35 /* LocationManager.swift in Sources */,
 				54580C061A32B6EB00657F29 /* ViewController.swift in Sources */,
 				147A6DCB1A32D33300DC9CAC /* DetailViewController.swift in Sources */,
 				54580C011A32B6EB00657F29 /* AppDelegate.swift in Sources */,
+				F24B12D31A33805F000F4B35 /* ContactManager.swift in Sources */,
+				F24B12D51A33886F000F4B35 /* TableViewController.swift in Sources */,
 				54580C041A32B6EB00657F29 /* Fire.xcdatamodeld in Sources */,
+				F24B12D81A33924D000F4B35 /* phonebook.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,6 +592,7 @@
 				54580C381A336A6000657F29 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
@@ -587,6 +604,16 @@
 			);
 			currentVersion = 54580C031A32B6EB00657F29 /* Fire.xcdatamodel */;
 			path = Fire.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		F24B12D61A33924D000F4B35 /* phonebook.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F24B12D71A33924D000F4B35 /* phonebook.xcdatamodel */,
+			);
+			currentVersion = F24B12D71A33924D000F4B35 /* phonebook.xcdatamodel */;
+			path = phonebook.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -14,10 +14,8 @@ import CoreLocation
 class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
    
     
-    // location stuff
-    
-    @IBOutlet var label: UILabel!
-    var msg = "test"
+    // (Lat,Long) of user
+    var locData: CLLocationCoordinate2D!
     
     var manager: OneShotLocationManager?
     
@@ -33,21 +31,16 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
             
             // fetch location or an error
             if let loc = location {
-                
-                self.label.text = loc.description
-                self.msg = self.label.text!
-                //var fullArr =
-                println("self.label.text \(self.label.text)")
+                self.locData = loc.coordinate
                 //self.msg = self.label.text!
                 //println(loc.description)
             } else if let err = error {
-                self.label.text = err.localizedDescription
+                println(err.localizedDescription)
             }
             
             // destroy the object immediately to save memory
             self.manager = nil
         }
-        println(self.label.text)
     }
     
     // end location stuff
@@ -68,10 +61,19 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
         }
     }
     
+    /* 
+     * Constructs a message
+    */
+    func constructTxtMsg() -> String {
+        var mapURL = "https://maps.google.com/maps?q=\(self.locData.latitude),\(self.locData.longitude)"
+        var msg = "Please help! I'm currently in a life threatening situation and you're my number one emergency contact. You can find me here: ";
+        return msg + mapURL
+    }
+    
     @IBAction func sendMessage(sender: AnyObject) {
         var messageVC = MFMessageComposeViewController()
         
-        messageVC.body = "Please help! I'm currently in a life threatening situation and you're my number one emergency contact. Find me at \(msg)";
+        messageVC.body = constructTxtMsg()
         messageVC.recipients = ["1-408-561-0868", "1-936-250-0347"]
         messageVC.messageComposeDelegate = self;
         

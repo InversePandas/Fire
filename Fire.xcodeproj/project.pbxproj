@@ -75,6 +75,8 @@
 		F2EFE25C1A346E0A00B21793 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F2EFE2591A346E0A00B21793 /* Icon-Small@2x.png */; };
 		F2EFE25D1A346E0A00B21793 /* Icon-Small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F2EFE25A1A346E0A00B21793 /* Icon-Small@3x.png */; };
 		F2EFE25F1A346EFF00B21793 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F2EFE25E1A346EFF00B21793 /* logo.png */; };
+		F2EFE2611A34722100B21793 /* launchscreenfinal.png in Resources */ = {isa = PBXBuildFile; fileRef = F2EFE2601A34722100B21793 /* launchscreenfinal.png */; };
+		F2EFE2631A34726D00B21793 /* launchscreen-adjusted.png in Resources */ = {isa = PBXBuildFile; fileRef = F2EFE2621A34726D00B21793 /* launchscreen-adjusted.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -180,6 +182,8 @@
 		F2EFE2591A346E0A00B21793 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small@2x.png"; path = "pics/Icon-Small@2x.png"; sourceTree = SOURCE_ROOT; };
 		F2EFE25A1A346E0A00B21793 /* Icon-Small@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small@3x.png"; path = "pics/Icon-Small@3x.png"; sourceTree = SOURCE_ROOT; };
 		F2EFE25E1A346EFF00B21793 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = pics/logo.png; sourceTree = SOURCE_ROOT; };
+		F2EFE2601A34722100B21793 /* launchscreenfinal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = launchscreenfinal.png; path = pics/launchscreenfinal.png; sourceTree = SOURCE_ROOT; };
+		F2EFE2621A34726D00B21793 /* launchscreen-adjusted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "launchscreen-adjusted.png"; path = "pics/launchscreen-adjusted.png"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,8 +266,10 @@
 				F2EFE25A1A346E0A00B21793 /* Icon-Small@3x.png */,
 				F2EFE2441A343F2B00B21793 /* add.png */,
 				F2EFE2501A346DFB00B21793 /* Icon-60@2x.png */,
+				F2EFE2621A34726D00B21793 /* launchscreen-adjusted.png */,
 				F2EFE2541A346E0100B21793 /* Icon-76.png */,
 				F2EFE2551A346E0100B21793 /* Icon-76@2x.png */,
+				F2EFE2601A34722100B21793 /* launchscreenfinal.png */,
 				F2EFE2511A346DFB00B21793 /* Icon-60@3x.png */,
 				F2EFE24A1A346DF400B21793 /* Icon-40.png */,
 				F2EFE24B1A346DF400B21793 /* Icon-40@2x.png */,
@@ -493,12 +499,14 @@
 				F2EFE2231A3431A100B21793 /* firebutton.png in Resources */,
 				F2EFE2251A3431A100B21793 /* Icon-72.png in Resources */,
 				F2EFE23D1A343D9900B21793 /* add.png in Resources */,
+				F2EFE2631A34726D00B21793 /* launchscreen-adjusted.png in Resources */,
 				F2EFE2321A3431A100B21793 /* people.png in Resources */,
 				F2EFE2491A34501600B21793 /* back.png in Resources */,
 				F2EFE2411A343E1400B21793 /* add.png in Resources */,
 				F2EFE2331A3431A100B21793 /* pheonix.jpg in Resources */,
 				F2EFE2071A342BCE00B21793 /* Icon-40@2x.png in Resources */,
 				F2EFE24E1A346DF400B21793 /* Icon-40@2x.png in Resources */,
+				F2EFE2611A34722100B21793 /* launchscreenfinal.png in Resources */,
 				F2EFE23F1A343DF600B21793 /* people.png in Resources */,
 				F2EFE23B1A34365600B21793 /* swipe2.png in Resources */,
 				F2EFE2301A3431A100B21793 /* launch-screen.jpg in Resources */,

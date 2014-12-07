@@ -25,16 +25,20 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iphone2x.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="38h-cL-fm2">
-                    <rect key="frame" x="8" y="0.0" width="465" height="464"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchscreenfinal.png" translatesAutoresizingMaskIntoConstraints="NO" id="38h-cL-fm2">
+                    <rect key="frame" x="84" y="0.0" width="313" height="464"/>
                     <constraints>
+                        <constraint firstAttribute="width" secondItem="38h-cL-fm2" secondAttribute="height" multiplier="465:464" id="8Dm-JE-HrQ"/>
                         <constraint firstAttribute="width" secondItem="38h-cL-fm2" secondAttribute="height" multiplier="465:464" id="IzB-6b-dAO"/>
                         <constraint firstAttribute="height" constant="464" id="SqH-BA-bWd"/>
+                        <constraint firstAttribute="width" secondItem="38h-cL-fm2" secondAttribute="height" multiplier="465:690" id="anc-3I-75r"/>
                         <constraint firstAttribute="width" constant="464" id="glj-KK-omq"/>
                         <constraint firstAttribute="width" secondItem="38h-cL-fm2" secondAttribute="height" multiplier="1:1" id="nHP-YA-COM"/>
                     </constraints>
                     <variation key="default">
                         <mask key="constraints">
+                            <exclude reference="8Dm-JE-HrQ"/>
+                            <exclude reference="IzB-6b-dAO"/>
                             <exclude reference="SqH-BA-bWd"/>
                             <exclude reference="glj-KK-omq"/>
                             <exclude reference="nHP-YA-COM"/>
@@ -45,6 +49,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="kId-c2-rCX" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="bottom" multiplier="1/3" constant="1" id="5cJ-9S-tgC"/>
+                <constraint firstAttribute="centerX" secondItem="38h-cL-fm2" secondAttribute="centerX" constant="-0.5" id="5gk-Mc-6UJ"/>
                 <constraint firstItem="38h-cL-fm2" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottomMargin" constant="-8" id="CMo-Sq-XrF"/>
                 <constraint firstAttribute="centerX" secondItem="kId-c2-rCX" secondAttribute="centerX" id="Koa-jz-hwk"/>
                 <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="Kzo-t9-V3l"/>
@@ -62,6 +67,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="MRa-Ji-Ux2"/>
                     <exclude reference="gaN-Mk-vHB"/>
                     <exclude reference="pRm-SE-zC1"/>
                     <exclude reference="uJH-zZ-Yde"/>
@@ -71,6 +77,6 @@
         </view>
     </objects>
     <resources>
-        <image name="iphone2x.jpeg" width="640" height="960"/>
+        <image name="launchscreenfinal.png" width="639" height="961"/>
     </resources>
 </document>

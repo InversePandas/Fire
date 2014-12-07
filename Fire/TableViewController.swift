@@ -106,7 +106,7 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Default")
         // set title of cell to be the title of contact_entries
-        cell.textLabel!.text = contact_entries[indexPath.row].valueForKey("contactName") as String?
+        cell.textLabel.text = contact_entries[indexPath.row].valueForKey("contactName") as String?
         cell.detailTextLabel!.text = contact_entries[indexPath.row].valueForKey("contactPhoneNumber") as String?
         return cell;
     }

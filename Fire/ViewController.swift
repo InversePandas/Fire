@@ -22,6 +22,9 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     var firstLocation: Bool = true
     var locData: CLLocationCoordinate2D!
     
+    // used to store results from databse
+    var contact_entries = [NSManagedObject]()
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
     }
@@ -36,6 +39,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
+    
     }
     
     override func didReceiveMemoryWarning() {
@@ -52,8 +56,11 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
      * Constructs a message to place into the message sent from this phone
     */
     func constructTxtMsg() -> String {
-        var mapURL = "https://maps.google.com/maps?saddr=Current+Location&daddr=\(self.locData.latitude),\(self.locData.longitude)"
-        var msg = "Please help! I'm currently in a life threatening situation and you're my number one emergency contact. You can find me here: ";
+        var mapURL = ""
+        if (self.locData != nil) {
+            mapURL += "You can find me here: https://maps.google.com/maps?saddr=Current+Location&daddr=\(self.locData.latitude),\(self.locData.longitude)"
+        }
+        var msg = "Please help! I'm currently in a life threatening situation and you're my number one emergency contact.";
         return msg + mapURL
     }
     

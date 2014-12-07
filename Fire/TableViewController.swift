@@ -11,11 +11,13 @@ import Foundation
 import UIKit
 import CoreData
 
+
 class TableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
     
     // Create table view as soon as loads
     @IBOutlet var tblContacts: UITableView!
-    
+
+    var contact_entries = [NSManagedObject]()
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -87,7 +89,7 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
             //2 - find contact_entries object user is trying to delete
             let itemToDelete = contact_entries[indexPath.row]
             
-            //3 - delete it from managedContext
+            //3 - delete it from managedContext and sync contact_entries
             managedContext.deleteObject(itemToDelete)
             self.fetchLog()
             

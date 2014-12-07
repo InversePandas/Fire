@@ -1,5 +1,5 @@
  
- //
+//
 //  ButtonTableViewController.swift
 //  Fire
 //
@@ -12,10 +12,16 @@ import Foundation
 import UIKit
 import CoreData
 import MessageUI
-
-class ButtonTableViewController: UITableViewController, MFMessageComposeViewControllerDelegate{
+import CoreLocation
+ 
+class ButtonTableViewController: UITableViewController, MFMessageComposeViewControllerDelegate, CLLocationManagerDelegate{
     
-    @IBOutlet var tblContacts: UITableView!
+    @IBOutlet var buttonTableView: UITableView!
+    var locationManager: CLLocationManager!
+    var retrievedLocation: Bool = false
+    var locData: CLLocationCoordinate2D!
+    
+    var buttons = [NSManagedObject]()
     
     
     override func awakeFromNib() {
@@ -29,6 +35,41 @@ class ButtonTableViewController: UITableViewController, MFMessageComposeViewCont
         
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
         // self.navigationItem.rightBarButtonItem = addButton
+        
+        // load the location manager to start querying for data
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
+        
+        fetchLog()
+    }
+    
+    func fetchLog() {
+        //1
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext!
+        
+        // 2
+        let fetchRequest = NSFetchRequest(entityName:"Buttons")
+        
+        //3
+        var error: NSError?
+        
+        let fetchedResults =
+        managedContext.executeFetchRequest(fetchRequest,
+            error: &error) as [NSManagedObject]?
+        
+        if let results = fetchedResults {
+            buttons = results
+        } else {
+            println("Could not fetch \(error), \(error!.userInfo)")
+        }
+        
+        buttonTableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -74,115 +115,74 @@ class ButtonTableViewController: UITableViewController, MFMessageComposeViewCont
     
     // returning to view
     override func viewWillAppear(animated: Bool) {
-        //1
-        let appDelegate =
-        UIApplication.sharedApplication().delegate as AppDelegate
-        
-        let managedContext = appDelegate.managedObjectContext!
-        
-        //2
-        let fetchRequest = NSFetchRequest(entityName:"Buttons")
-        
-        //3
-        var error: NSError?
-        
-        let fetchedResults =
-        managedContext.executeFetchRequest(fetchRequest,
-            error: &error) as [NSManagedObject]?
-        
-        if let results = fetchedResults {
-            contact_entries = results
-        } else {
-            println("Could not fetch \(error), \(error!.userInfo)")
-        }
-        
-        tblContacts.reloadData();
+        fetchLog()
     }
     
     // allow deletes
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.Delete)
         {
-            ContactMgr.contacts.removeAtIndex(indexPath.row)
-            // reload table data
-            tblContacts.reloadData()
+            // ContactMgr.contacts.removeAtIndex(indexPath.row)
         }
         
     }
     
-    // get contact numbers
-    func getContactNumbers() -> NSMutableArray{
+    // get button - return button buttonPhoneNumbers as a list and buttonMessage
+    func getButton(forRowAtIndexPath indexPath: NSIndexPath) -> (phoneNumbers: [AnyObject], message: String) {
         
-        //1
-        let appDelegate =
-        UIApplication.sharedApplication().delegate as AppDelegate
+        var buttonPhoneNumbers = buttons[indexPath.row].valueForKey("buttonPhoneNumbers") as String
         
-        let managedContext = appDelegate.managedObjectContext!
+        var explodedPhoneNumbers = buttonPhoneNumbers.stringByReplacingOccurrencesOfString(" ", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil).componentsSeparatedByString(",")
         
-        // 2
-        let fetchRequest = NSFetchRequest(entityName:"Buttons")
-        
-        //3
-        var error: NSError?
-        
-        let fetchedResults =
-        managedContext.executeFetchRequest(fetchRequest,
-            error: &error) as [NSManagedObject]?
-        
-        if let results = fetchedResults {
-            contact_entries = results
-        } else {
-            println("Could not fetch \(error), \(error!.userInfo)")
-        }
+        var buttonMessage = buttons[indexPath.row].valueForKey("buttonMessage") as String
         
         var phoneNumbers: NSMutableArray = NSMutableArray()
-        for entry in contact_entries {
-            var phone: String = entry.valueForKey("buttonPhoneNumbers") as String
-            phoneNumbers.addObject(phone)
+        for number in explodedPhoneNumbers {
+            phoneNumbers.addObject(number)
         }
         
-        return phoneNumbers
+        return (phoneNumbers, buttonMessage)
+    }
+    
+    // Queries for a location if available and returns a URL to pin on map
+    func getLocationURL() -> String {
+        if (retrievedLocation){
+            return "https://maps.google.com/maps?saddr=Current+Location&daddr=\(self.locData.latitude),\(self.locData.longitude)"
+        }
+        else {
+            return ""
+        }
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
-        let row = indexPath.row
-        println(row)
+        var button = getButton(forRowAtIndexPath: indexPath)
         
         var messageVC = MFMessageComposeViewController()
         
-        messageVC.body = "Enter a message";
-        messageVC.recipients = getContactNumbers()
+        messageVC.recipients = button.phoneNumbers
+        messageVC.body = button.message + getLocationURL()
         messageVC.messageComposeDelegate = self;
         
-        
         self.presentViewController(messageVC, animated: false, completion: nil)
-        
-        //let vc:BillInfoViewController = BillInfoViewController()
-        //let vc = self.storyboard.instantiateViewControllerWithIdentifier("billInfo") as UINavigationController
-        
-        //self.presentViewController(vc, animated: true, completion: nil)
+
     }
     
     // UITableViewDataSource
     // tells table how many rows to render
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contact_entries.count
+        return buttons.count
     }
     
     // build a cell
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Default")
-        
-        //        cell.textLabel.text = WaveMgr.waves[indexPath.row].name
-        //        cell.detailTextLabel!.text = WaveMgr.waves[indexPath.row].desc
-        //
-        cell.textLabel.text = contact_entries[indexPath.row].valueForKey("buttonName") as String?
-        cell.detailTextLabel!.text = contact_entries[indexPath.row].valueForKey("buttonPhoneNumbers") as String?
+
+        cell.textLabel.text = buttons[indexPath.row].valueForKey("buttonName") as String?
+        cell.detailTextLabel!.text = buttons[indexPath.row].valueForKey("buttonPhoneNumbers") as String?
         
         return cell;
     }
-    
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -197,7 +197,14 @@ class ButtonTableViewController: UITableViewController, MFMessageComposeViewCont
     return cell
     }*/
     
-    
+    // Needed to implement CLLocationManagerDelegate
+    // this function is called ass soon as the Location has been updated
+    func locationManager(manager:CLLocationManager, didUpdateLocations locations:[AnyObject]) {
+        // store the updated location in the class
+        self.locData = manager.location.coordinate
+        retrievedLocation = true
+    }
+
     
 }
 

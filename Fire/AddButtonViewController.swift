@@ -57,7 +57,7 @@ class AddButtonViewController: UIViewController, UITextFieldDelegate {
         }
         //5
         //println("here")
-        contact_entries.append(entry)
+        // buttons.append(entry)
     }
     
     

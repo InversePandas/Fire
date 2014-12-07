@@ -30,6 +30,7 @@
                     <constraints>
                         <constraint firstAttribute="width" secondItem="38h-cL-fm2" secondAttribute="height" multiplier="465:464" id="8Dm-JE-HrQ"/>
                         <constraint firstAttribute="width" secondItem="38h-cL-fm2" secondAttribute="height" multiplier="465:464" id="IzB-6b-dAO"/>
+                        <constraint firstAttribute="width" secondItem="38h-cL-fm2" secondAttribute="height" multiplier="313:464" id="RlQ-Ph-QsN"/>
                         <constraint firstAttribute="height" constant="464" id="SqH-BA-bWd"/>
                         <constraint firstAttribute="width" secondItem="38h-cL-fm2" secondAttribute="height" multiplier="465:690" id="anc-3I-75r"/>
                         <constraint firstAttribute="width" constant="464" id="glj-KK-omq"/>
@@ -40,6 +41,7 @@
                             <exclude reference="8Dm-JE-HrQ"/>
                             <exclude reference="IzB-6b-dAO"/>
                             <exclude reference="SqH-BA-bWd"/>
+                            <exclude reference="anc-3I-75r"/>
                             <exclude reference="glj-KK-omq"/>
                             <exclude reference="nHP-YA-COM"/>
                         </mask>

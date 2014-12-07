@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ContactsViewController: UIViewController, UITextFieldDelegate {
+class ContactsViewController: ResponsiveTextFieldViewController, UITextFieldDelegate {
     
     @IBOutlet var txtName:UITextField!
     //@IBOutlet var txtDesc:UITextView!

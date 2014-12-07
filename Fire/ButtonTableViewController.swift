@@ -122,7 +122,19 @@ class ButtonTableViewController: UITableViewController, MFMessageComposeViewCont
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.Delete)
         {
-            // ContactMgr.contacts.removeAtIndex(indexPath.row)
+            //1
+            let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+            let managedContext = appDelegate.managedObjectContext!
+            
+            //2 - find contact_entries object user is trying to delete
+            let itemToDelete = buttons[indexPath.row]
+            
+            //3 - delete it from managedContext and sync contact_entries
+            managedContext.deleteObject(itemToDelete)
+            self.fetchLog()
+            
+            //4 - tell table view to reload table
+            buttonTableView.reloadData()
         }
         
     }

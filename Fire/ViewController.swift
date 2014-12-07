@@ -82,7 +82,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
         let managedContext = appDelegate.managedObjectContext!
         
         // 2
-        let fetchRequest = NSFetchRequest(entityName:"Entry")
+        let fetchRequest = NSFetchRequest(entityName:"Contacts")
         
         //3
         var error: NSError?
@@ -99,7 +99,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
         
         var phoneNumbers: NSMutableArray = NSMutableArray()
         for entry in contact_entries {
-            var phone: String = entry.valueForKey("text") as String
+            var phone: String = entry.valueForKey("contactPhoneNumber") as String
             phoneNumbers.addObject(phone)
         }
         

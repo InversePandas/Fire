@@ -119,7 +119,7 @@ class ButtonTableViewController: UITableViewController, MFMessageComposeViewCont
         let managedContext = appDelegate.managedObjectContext!
         
         // 2
-        let fetchRequest = NSFetchRequest(entityName:"Entry")
+        let fetchRequest = NSFetchRequest(entityName:"Buttons")
         
         //3
         var error: NSError?
@@ -176,9 +176,8 @@ class ButtonTableViewController: UITableViewController, MFMessageComposeViewCont
         //        cell.textLabel.text = WaveMgr.waves[indexPath.row].name
         //        cell.detailTextLabel!.text = WaveMgr.waves[indexPath.row].desc
         //
-        cell.textLabel.text = contact_entries[indexPath.row].valueForKey("name") as String?
-        cell.detailTextLabel!.text = contact_entries[indexPath.row].valueForKey("text") as String?
-        cell.detailTextLabel!.text = contact_entries[indexPath.row].valueForKey("phones") as String?
+        cell.textLabel.text = contact_entries[indexPath.row].valueForKey("buttonName") as String?
+        cell.detailTextLabel!.text = contact_entries[indexPath.row].valueForKey("buttonPhoneNumbers") as String?
         
         return cell;
     }

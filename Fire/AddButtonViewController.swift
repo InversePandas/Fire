@@ -30,7 +30,7 @@ class AddButtonViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    func saveEntry(name: String, text: String, phones: String) {
+    func saveEntry(buttonName: String, buttonMessage: String, buttonPhoneNumbers: String) {
         //1
         let appDelegate =
         UIApplication.sharedApplication().delegate as AppDelegate
@@ -46,11 +46,9 @@ class AddButtonViewController: UIViewController, UITextFieldDelegate {
             insertIntoManagedObjectContext:managedContext)
         
         //3
-        
-        entry.setValue(name, forKey: "name")
-        entry.setValue(text, forKey: "text")
-        entry.setValue(phones, forKey: "phones")
-        
+        entry.setValue(buttonMessage, forKey: "buttonMessage")
+        entry.setValue(buttonName, forKey: "buttonName")
+        entry.setValue(buttonPhoneNumbers, forKey: "buttonPhoneNumbers")
         
         //4
         var error: NSError?
@@ -65,8 +63,10 @@ class AddButtonViewController: UIViewController, UITextFieldDelegate {
     
     // events
     @IBAction func btnAddContact_Click (sender:UIButton){
+        // TODO: Need to verify user input (in some way....)
+        
         // ContactMgr.addContact(txtName.text, phone: txtPhone.text)
-        self.saveEntry(txtName.text, text: txtDescription.text, phones: txtPhone.text)
+        self.saveEntry(txtName.text, buttonMessage: txtDescription.text, buttonPhoneNumbers: txtPhone.text)
         self.view.endEditing(true)
         println(txtName.text)
         println(txtDescription.text)

@@ -95,6 +95,16 @@ class TableViewController2: UITableViewController, UITableViewDataSource, UITabl
             tblContacts.reloadData()
         }
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        let row = indexPath.row
+        println(row)
+        //let vc:BillInfoViewController = BillInfoViewController()
+        //let vc = self.storyboard.instantiateViewControllerWithIdentifier("billInfo") as UINavigationController
+        
+        //self.presentViewController(vc, animated: true, completion: nil)
+    }
 
     // MARK : UITableViewDataSource
     // tells table how many rows to render

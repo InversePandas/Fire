@@ -46,9 +46,10 @@ class AddButtonViewController: UIViewController, UITextFieldDelegate {
             insertIntoManagedObjectContext:managedContext)
         
         //3
-        entry.setValue(text, forKey: "text")
+        
         entry.setValue(name, forKey: "name")
-        entry.setValue(name, forKey: "phones")
+        entry.setValue(text, forKey: "text")
+        entry.setValue(phones, forKey: "phones")
         
         
         //4
@@ -67,7 +68,9 @@ class AddButtonViewController: UIViewController, UITextFieldDelegate {
         // ContactMgr.addContact(txtName.text, phone: txtPhone.text)
         self.saveEntry(txtName.text, text: txtDescription.text, phones: txtPhone.text)
         self.view.endEditing(true)
-        
+        println(txtName.text)
+        println(txtDescription.text)
+        println(txtPhone.text)
         
         // reset field to empty
         txtName.text = ""

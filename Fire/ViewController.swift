@@ -24,7 +24,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-    
         
         //
         // request the current location
@@ -127,9 +126,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
         messageVC.recipients = getContactNumbers()
         messageVC.messageComposeDelegate = self;
         
-        // test contact numbers
-        getContactNumbers()
-
         
         // self.presentViewController(messageVC, animated: false, completion: nil)
         // Do any additional setup after loading the view, typically from a nib.

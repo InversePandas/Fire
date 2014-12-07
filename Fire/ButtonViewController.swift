@@ -1,9 +1,8 @@
- 
- //
-//  ButtonTableViewController.swift
+//
+//  ButtonViewController.swift
 //  Fire
 //
-//  Created by Karen Kennedy on 12/6/14.
+//  Created by Eden on 12/6/14.
 //  Copyright (c) 2014 Karen Kennedy. All rights reserved.
 //
 
@@ -13,7 +12,7 @@ import UIKit
 import CoreData
 import MessageUI
 
-class ButtonTableViewController: UITableViewController, MFMessageComposeViewControllerDelegate{
+class ButtonViewController: UIViewController, MFMessageComposeViewControllerDelegate{
     
     @IBOutlet var tblContacts: UITableView!
     
@@ -49,23 +48,6 @@ class ButtonTableViewController: UITableViewController, MFMessageComposeViewCont
             let object = objects[indexPath.row] as NSDate
             (segue.destinationViewController as DetailViewController).detailItem = object
             } */
-        }
-    }
-    
-    // MFMessageComposeViewControllerDelegate functionality
-    func messageComposeViewController(controller: MFMessageComposeViewController!, didFinishWithResult result: MessageComposeResult) {
-        switch (result.value) {
-        case MessageComposeResultCancelled.value:
-            println("Message was cancelled")
-            self.dismissViewControllerAnimated(true, completion: nil)
-        case MessageComposeResultFailed.value:
-            println("Message failed")
-            self.dismissViewControllerAnimated(true, completion: nil)
-        case MessageComposeResultSent.value:
-            println("Message was sent")
-            self.dismissViewControllerAnimated(true, completion: nil)
-        default:
-            break;
         }
     }
     
@@ -155,7 +137,7 @@ class ButtonTableViewController: UITableViewController, MFMessageComposeViewCont
         messageVC.messageComposeDelegate = self;
         
         
-        self.presentViewController(messageVC, animated: false, completion: nil)
+        // self.presentViewController(messageVC, animated: false, completion: nil)
         
         //let vc:BillInfoViewController = BillInfoViewController()
         //let vc = self.storyboard.instantiateViewControllerWithIdentifier("billInfo") as UINavigationController

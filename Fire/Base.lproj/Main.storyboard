@@ -235,6 +235,12 @@
                     <toolbarItems>
                         <barButtonItem id="kIf-7E-j6p"/>
                         <barButtonItem id="Z7I-DA-RGu"/>
+                        <barButtonItem image="back.png" id="jmi-Df-rBg">
+                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="vXZ-lx-hvc" kind="push" id="CrO-ad-XDi"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" id="SgV-ht-TdT">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="D7U-kx-05D">
                                 <rect key="frame" x="525" y="-13" width="75" height="75"/>
@@ -289,6 +295,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ekm-WA-Shh">
+                            <rect key="frame" x="-23" y="-15" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="3xs-5e-xvE">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -305,11 +318,21 @@
                     <toolbarItems>
                         <barButtonItem id="bTX-5A-5uG"/>
                         <barButtonItem id="hWs-e4-U6s"/>
+                        <barButtonItem image="back.png" id="hVn-76-x48">
+                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="vXZ-lx-hvc" kind="push" id="dFv-OE-Odx"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="chF-Kl-YDl"/>
+                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="2dA-SA-9ru"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="f55-hK-LFF"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="Wdl-wY-E2v">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="7U9-2L-9xM">
+                            <inset key="imageInsets" minX="19" minY="3" maxX="0.0" maxY="0.0"/>
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="t8y-g0-eu7">
-                                <rect key="frame" x="16" y="4" width="75" height="35"/>
+                                <rect key="frame" x="16" y="4" width="76" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="back" image="back.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -335,6 +358,9 @@
                                 </connections>
                             </button>
                         </barButtonItem>
+                        <connections>
+                            <outlet property="backBarButtonItem" destination="7U9-2L-9xM" id="EuP-m8-x70"/>
+                        </connections>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -380,7 +406,7 @@
                                 </state>
                                 <connections>
                                     <action selector="btnAddContact_Click:" destination="cUn-jp-Yls" eventType="touchUpInside" id="6BR-J8-FuZ"/>
-                                    <segue destination="jHg-GI-mg3" kind="modal" id="QvG-wM-wuu"/>
+                                    <segue destination="jHg-GI-mg3" kind="push" id="STB-eZ-99g"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="add contact " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGf-k1-kae">
@@ -499,9 +525,9 @@
         <image name="swipe.png" width="49" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Usv-rx-q2c"/>
-        <segue reference="mJ1-8Z-BoG"/>
-        <segue reference="QvG-wM-wuu"/>
+        <segue reference="nA7-ko-om7"/>
+        <segue reference="d7j-YG-ZOM"/>
+        <segue reference="FU7-jV-KYX"/>
     </inferredMetricsTieBreakers>
-    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" red="0.42900988520408168" green="0.42900988520408168" blue="0.42900988520408168" alpha="1" colorSpace="calibratedRGB"/>
 </document>

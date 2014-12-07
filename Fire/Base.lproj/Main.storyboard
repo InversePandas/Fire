@@ -117,7 +117,11 @@
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="left" id="VYp-jN-VYj"/>
+                <swipeGestureRecognizer direction="left" id="VYp-jN-VYj">
+                    <connections>
+                        <segue destination="Ph6-fT-6Xq" kind="push" id="kzm-Re-laY"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1115" y="300"/>
         </scene>
@@ -213,7 +217,7 @@
         <!--Button Table View Controller-->
         <scene sceneID="ncw-cc-rhi">
             <objects>
-                <tableViewController id="Ph6-fT-6Xq" customClass="ButtonTableViewController" customModule="Fire" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController modalTransitionStyle="crossDissolve" id="Ph6-fT-6Xq" customClass="ButtonTableViewController" customModule="Fire" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="kfh-vp-UIL">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -290,7 +294,7 @@
         <!--Table View Controller-->
         <scene sceneID="eGE-aX-3WN">
             <objects>
-                <tableViewController id="jHg-GI-mg3" customClass="TableViewController" customModule="Fire" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController modalTransitionStyle="crossDissolve" id="jHg-GI-mg3" customClass="TableViewController" customModule="Fire" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="RlN-xD-TbY">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -525,9 +529,9 @@
         <image name="swipe.png" width="49" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="kzm-Re-laY"/>
+        <segue reference="mJ1-8Z-BoG"/>
         <segue reference="nA7-ko-om7"/>
-        <segue reference="d7j-YG-ZOM"/>
-        <segue reference="FU7-jV-KYX"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.42900988520408168" green="0.42900988520408168" blue="0.42900988520408168" alpha="1" colorSpace="calibratedRGB"/>
 </document>

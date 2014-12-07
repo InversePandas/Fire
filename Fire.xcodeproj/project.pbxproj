@@ -20,6 +20,8 @@
 		54580C311A336A6000657F29 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54580C301A336A6000657F29 /* TodayViewController.swift */; };
 		54580C331A336A6000657F29 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54580C321A336A6000657F29 /* MainInterface.storyboard */; };
 		54580C361A336A6000657F29 /* FireWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 54580C291A336A6000657F29 /* FireWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		54A077D51A33C53700CB2E58 /* AddButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A077D41A33C53700CB2E58 /* AddButtonViewController.swift */; };
+		54A077D71A33C54D00CB2E58 /* ButtonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A077D61A33C54D00CB2E58 /* ButtonTableViewController.swift */; };
 		F2038A0B1A33A29100A874F7 /* TableViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2038A0A1A33A29100A874F7 /* TableViewController2.swift */; };
 		F24B12CF1A32D497000F4B35 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24B12CE1A32D497000F4B35 /* LocationManager.swift */; };
 		F24B12D11A337FE9000F4B35 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24B12D01A337FE9000F4B35 /* ContactsViewController.swift */; };
@@ -78,6 +80,8 @@
 		54580C2F1A336A6000657F29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54580C301A336A6000657F29 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		54580C321A336A6000657F29 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		54A077D41A33C53700CB2E58 /* AddButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddButtonViewController.swift; sourceTree = "<group>"; };
+		54A077D61A33C54D00CB2E58 /* ButtonTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonTableViewController.swift; sourceTree = "<group>"; };
 		F2038A0A1A33A29100A874F7 /* TableViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController2.swift; sourceTree = "<group>"; };
 		F24B12CE1A32D497000F4B35 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		F24B12D01A337FE9000F4B35 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +151,8 @@
 				54580C071A32B6EB00657F29 /* Main.storyboard */,
 				F24B12D01A337FE9000F4B35 /* ContactsViewController.swift */,
 				F24B12D21A33805F000F4B35 /* ContactManager.swift */,
+				54A077D41A33C53700CB2E58 /* AddButtonViewController.swift */,
+				54A077D61A33C54D00CB2E58 /* ButtonTableViewController.swift */,
 				54580C0A1A32B6EB00657F29 /* Images.xcassets */,
 				54580C0C1A32B6EB00657F29 /* LaunchScreen.xib */,
 				54580C021A32B6EB00657F29 /* Fire.xcdatamodeld */,
@@ -341,12 +347,14 @@
 				F2038A0B1A33A29100A874F7 /* TableViewController2.swift in Sources */,
 				F24B12D11A337FE9000F4B35 /* ContactsViewController.swift in Sources */,
 				F24B12CF1A32D497000F4B35 /* LocationManager.swift in Sources */,
+				54A077D51A33C53700CB2E58 /* AddButtonViewController.swift in Sources */,
 				54580C061A32B6EB00657F29 /* ViewController.swift in Sources */,
 				147A6DCB1A32D33300DC9CAC /* DetailViewController.swift in Sources */,
 				54580C011A32B6EB00657F29 /* AppDelegate.swift in Sources */,
 				F24B12D31A33805F000F4B35 /* ContactManager.swift in Sources */,
 				F24B12D51A33886F000F4B35 /* TableViewController.swift in Sources */,
 				54580C041A32B6EB00657F29 /* Fire.xcdatamodeld in Sources */,
+				54A077D71A33C54D00CB2E58 /* ButtonTableViewController.swift in Sources */,
 				F24B12D81A33924D000F4B35 /* phonebook.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

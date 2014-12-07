@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -43,8 +43,8 @@
                                     <segue destination="OB5-Fq-MJx" kind="show" id="ZQW-wT-W74"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zy9-Dr-xCl">
-                                <rect key="frame" x="359" y="489" width="183" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zy9-Dr-xCl">
+                                <rect key="frame" x="209" y="487" width="183" height="30"/>
                                 <state key="normal" title="Input Emergency Contacts">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -58,15 +58,26 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xDk-9v-6bT">
+                                <rect key="frame" x="139" y="517" width="127" height="30"/>
+                                <state key="normal" title="See Other Buttons">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Jrb-Nx-b9J" kind="modal" id="rYF-kM-2Gq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="zy9-Dr-xCl" secondAttribute="centerX" constant="-0.5" id="3wt-jd-YF0"/>
                             <constraint firstItem="uXU-kU-ceU" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="163" id="NMl-Tx-pDS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="MHE-ds-eUK" secondAttribute="trailing" constant="46" id="QYG-ff-52H"/>
                             <constraint firstItem="MHE-ds-eUK" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="TVi-Qm-hYi"/>
                             <constraint firstItem="uXU-kU-ceU" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="VQt-Xd-AM1"/>
                             <constraint firstItem="MHE-ds-eUK" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="31" id="Zxr-nu-i24"/>
                             <constraint firstItem="uXU-kU-ceU" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="123" id="aJl-dG-boM"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="zy9-Dr-xCl" secondAttribute="bottom" constant="83" id="afW-Zi-uQc"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="uXU-kU-ceU" secondAttribute="bottom" constant="184" id="hNl-Vi-Eck"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="MHE-ds-eUK" secondAttribute="bottom" constant="520" id="ray-mu-0GX"/>
                         </constraints>
@@ -81,6 +92,94 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="398" y="300"/>
+        </scene>
+        <!--Add Button View Controller-->
+        <scene sceneID="KBG-uo-2O9">
+            <objects>
+                <viewController id="Jrb-Nx-b9J" customClass="AddButtonViewController" customModule="Fire" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Lr-Fr-8QV"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ejc-sX-cjK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="O44-5s-mNr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RB6-fn-PKg">
+                                <rect key="frame" x="146" y="122" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Jrb-Nx-b9J" id="0OZ-dr-iz0"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="14c-ar-prh">
+                                <rect key="frame" x="146" y="215" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Jrb-Nx-b9J" id="iFf-sh-fjn"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTW-Q4-8aS">
+                                <rect key="frame" x="179" y="364" width="79" height="30"/>
+                                <state key="normal" title="Add Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnAddContact_Click:" destination="Jrb-Nx-b9J" eventType="touchUpInside" id="ae4-q8-wJN"/>
+                                    <segue destination="Ph6-fT-6Xq" kind="modal" id="bDp-Ba-O7N"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kLV-1t-8wS">
+                                <rect key="frame" x="138" y="286" width="211" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="cUn-jp-Yls" id="KUA-Lv-XED"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="txtDescription" destination="14c-ar-prh" id="MMq-kn-N6C"/>
+                        <outlet property="txtName" destination="RB6-fn-PKg" id="5Eh-11-irC"/>
+                        <outlet property="txtPhone" destination="kLV-1t-8wS" id="qdj-bj-V9N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dic-gJ-rSd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="43" y="987"/>
+        </scene>
+        <!--Button Table View Controller-->
+        <scene sceneID="ncw-cc-rhi">
+            <objects>
+                <tableViewController id="Ph6-fT-6Xq" customClass="ButtonTableViewController" customModule="Fire" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="kfh-vp-UIL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="fYm-zD-zUr">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fYm-zD-zUr" id="i4y-qb-hq6">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Ph6-fT-6Xq" id="Jz8-kR-Bta"/>
+                            <outlet property="delegate" destination="Ph6-fT-6Xq" id="fl4-sv-faH"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="tblContacts" destination="kfh-vp-UIL" id="xNt-4u-y3W"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yus-gb-yzz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="674" y="987"/>
         </scene>
         <!--Table View Controller2-->
         <scene sceneID="eGE-aX-3WN">
@@ -146,7 +245,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H3u-M7-gPt">
-                                <rect key="frame" x="179" y="249" width="211" height="30"/>
+                                <rect key="frame" x="179" y="231" width="211" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -154,7 +253,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0j4-p1-63V">
-                                <rect key="frame" x="241" y="333" width="87" height="30"/>
+                                <rect key="frame" x="241" y="341" width="87" height="30"/>
                                 <state key="normal" title="Add Contact">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>

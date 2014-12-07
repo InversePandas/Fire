@@ -1,8 +1,8 @@
 //
-//  TableViewController2.swift
+//  ButtonTableViewController.swift
 //  Fire
 //
-//  Created by Eden on 12/6/14.
+//  Created by Karen Kennedy on 12/6/14.
 //  Copyright (c) 2014 Karen Kennedy. All rights reserved.
 //
 
@@ -11,7 +11,7 @@ import Foundation
 import UIKit
 import CoreData
 
-class TableViewController2: UITableViewController {
+class ButtonTableViewController: UITableViewController {
     
     @IBOutlet var tblContacts: UITableView!
     
@@ -64,7 +64,7 @@ class TableViewController2: UITableViewController {
         let managedContext = appDelegate.managedObjectContext!
         
         //2
-        let fetchRequest = NSFetchRequest(entityName:"Entry")
+        let fetchRequest = NSFetchRequest(entityName:"Buttons")
         
         //3
         var error: NSError?
@@ -107,7 +107,7 @@ class TableViewController2: UITableViewController {
         //
         cell.textLabel!.text = contact_entries[indexPath.row].valueForKey("name") as String?
         cell.detailTextLabel!.text = contact_entries[indexPath.row].valueForKey("text") as String?
-        
+        cell.detailTextLabel!.text = contact_entries[indexPath.row].valueForKey("phones") as String?
         
         return cell;
     }
@@ -119,11 +119,11 @@ class TableViewController2: UITableViewController {
     
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
-        
-        // let object = objects[indexPath.row] as NSDate
-        // cell.textLabel.text = object.description
-        return cell
+    let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+    
+    // let object = objects[indexPath.row] as NSDate
+    // cell.textLabel.text = object.description
+    return cell
     }*/
     
     

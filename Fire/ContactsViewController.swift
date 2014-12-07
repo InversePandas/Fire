@@ -9,15 +9,24 @@
 import UIKit
 import CoreData
 
-class ContactsViewController: UIViewController, UITextFieldDelegate {
+class ContactsViewController: ResponsiveTextFieldViewController, UITextFieldDelegate {
     
     @IBOutlet var txtName:UITextField!
     //@IBOutlet var txtDesc:UITextView!
     @IBOutlet var txtPhone:UITextField!
+    var frameView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.frameView = UIView(frame: CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height))
+        
+        
+        // Keyboard stuff.
+        var center: NSNotificationCenter = NSNotificationCenter.defaultCenter()
+        center.addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        center.addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -80,5 +89,8 @@ class ContactsViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder();
         return true;
     }
+    
+    // magic keyboard
+    
     
 }

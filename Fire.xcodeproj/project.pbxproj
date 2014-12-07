@@ -77,6 +77,7 @@
 		F2EFE25F1A346EFF00B21793 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F2EFE25E1A346EFF00B21793 /* logo.png */; };
 		F2EFE2611A34722100B21793 /* launchscreenfinal.png in Resources */ = {isa = PBXBuildFile; fileRef = F2EFE2601A34722100B21793 /* launchscreenfinal.png */; };
 		F2EFE2631A34726D00B21793 /* launchscreen-adjusted.png in Resources */ = {isa = PBXBuildFile; fileRef = F2EFE2621A34726D00B21793 /* launchscreen-adjusted.png */; };
+		F2EFE2671A347C7600B21793 /* ResponsiveTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EFE2661A347C7600B21793 /* ResponsiveTextFieldViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -184,6 +185,7 @@
 		F2EFE25E1A346EFF00B21793 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = pics/logo.png; sourceTree = SOURCE_ROOT; };
 		F2EFE2601A34722100B21793 /* launchscreenfinal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = launchscreenfinal.png; path = pics/launchscreenfinal.png; sourceTree = SOURCE_ROOT; };
 		F2EFE2621A34726D00B21793 /* launchscreen-adjusted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "launchscreen-adjusted.png"; path = "pics/launchscreen-adjusted.png"; sourceTree = SOURCE_ROOT; };
+		F2EFE2661A347C7600B21793 /* ResponsiveTextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponsiveTextFieldViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +250,7 @@
 				54580C0C1A32B6EB00657F29 /* LaunchScreen.xib */,
 				54580C021A32B6EB00657F29 /* Fire.xcdatamodeld */,
 				54580BFE1A32B6EB00657F29 /* Supporting Files */,
+				F2EFE2661A347C7600B21793 /* ResponsiveTextFieldViewController.swift */,
 			);
 			path = Fire;
 			sourceTree = "<group>";
@@ -538,6 +541,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2EFE2671A347C7600B21793 /* ResponsiveTextFieldViewController.swift in Sources */,
 				F2038A0B1A33A29100A874F7 /* TableViewController.swift in Sources */,
 				F24B12D11A337FE9000F4B35 /* ContactsViewController.swift in Sources */,
 				F24B12CF1A32D497000F4B35 /* LocationManager.swift in Sources */,

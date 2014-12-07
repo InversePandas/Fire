@@ -85,7 +85,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         if (firstLocation) {
             // don't present the view again unless it is the first location
            firstLocation = false
-            self.presentViewController(constructMessageView(), animated: false, completion: nil)
+            // self.presentViewController(constructMessageView(), animated: false, completion: nil)
         }
     }
 

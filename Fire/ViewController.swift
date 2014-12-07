@@ -84,11 +84,9 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         // first time we see the location
         if (firstLocation) {
             // don't present the view again unless it is the first location
-           firstLocation = true
+           firstLocation = false
             self.presentViewController(constructMessageView(), animated: false, completion: nil)
         }
-        println("locations = \(locations)")
-        
     }
 
     // Useful Helper Functions

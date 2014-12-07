@@ -136,7 +136,7 @@ class ButtonTableViewController: UITableViewController, MFMessageComposeViewCont
         
         var phoneNumbers: NSMutableArray = NSMutableArray()
         for entry in contact_entries {
-            var phone: String = entry.valueForKey("text") as String
+            var phone: String = entry.valueForKey("buttonPhoneNumbers") as String
             phoneNumbers.addObject(phone)
         }
         

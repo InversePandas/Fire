@@ -26,7 +26,7 @@ class ContactsViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    func saveEntry(name: String, text: String) {
+    func saveEntry(contactName: String, contactPhoneNumber: String) {
         //1
         let appDelegate =
         UIApplication.sharedApplication().delegate as AppDelegate
@@ -34,7 +34,7 @@ class ContactsViewController: UIViewController, UITextFieldDelegate {
         let managedContext = appDelegate.managedObjectContext!
         
         //2
-        let entity =  NSEntityDescription.entityForName("Entry",
+        let entity =  NSEntityDescription.entityForName("Contacts",
             inManagedObjectContext:
             managedContext)
         
@@ -42,8 +42,8 @@ class ContactsViewController: UIViewController, UITextFieldDelegate {
             insertIntoManagedObjectContext: managedContext)
         
         //3
-        entry.setValue(text, forKey: "text")
-        entry.setValue(name, forKey: "name")
+        entry.setValue(contactPhoneNumber, forKey: "contactPhoneNumber")
+        entry.setValue(contactName, forKey: "contactName")
         
         
         //4
@@ -60,7 +60,7 @@ class ContactsViewController: UIViewController, UITextFieldDelegate {
     // events
     @IBAction func btnAddContact_Click (sender:UIButton){
         // ContactMgr.addContact(txtName.text, phone: txtPhone.text)
-        self.saveEntry(txtName.text, text: txtPhone.text)
+        self.saveEntry(txtName.text, contactPhoneNumber: txtPhone.text)
         self.view.endEditing(true)
         
         

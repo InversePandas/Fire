@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		147A6DCA1A32D33300DC9CAC /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147A6DC81A32D33300DC9CAC /* MasterViewController.swift */; };
-		147A6DCB1A32D33300DC9CAC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147A6DC91A32D33300DC9CAC /* DetailViewController.swift */; };
 		54580C011A32B6EB00657F29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54580C001A32B6EB00657F29 /* AppDelegate.swift */; };
 		54580C041A32B6EB00657F29 /* Fire.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 54580C021A32B6EB00657F29 /* Fire.xcdatamodeld */; };
 		54580C061A32B6EB00657F29 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54580C051A32B6EB00657F29 /* ViewController.swift */; };
@@ -22,12 +20,10 @@
 		54580C361A336A6000657F29 /* FireWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 54580C291A336A6000657F29 /* FireWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		54A077D51A33C53700CB2E58 /* AddButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A077D41A33C53700CB2E58 /* AddButtonViewController.swift */; };
 		54A077D71A33C54D00CB2E58 /* ButtonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A077D61A33C54D00CB2E58 /* ButtonTableViewController.swift */; };
-		F2038A0B1A33A29100A874F7 /* TableViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2038A0A1A33A29100A874F7 /* TableViewController2.swift */; };
+		F2038A0B1A33A29100A874F7 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2038A0A1A33A29100A874F7 /* TableViewController.swift */; };
 		F24B12CF1A32D497000F4B35 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24B12CE1A32D497000F4B35 /* LocationManager.swift */; };
 		F24B12D11A337FE9000F4B35 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24B12D01A337FE9000F4B35 /* ContactsViewController.swift */; };
 		F24B12D31A33805F000F4B35 /* ContactManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24B12D21A33805F000F4B35 /* ContactManager.swift */; };
-		F24B12D51A33886F000F4B35 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24B12D41A33886F000F4B35 /* TableViewController.swift */; };
-		F24B12D81A33924D000F4B35 /* phonebook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F24B12D61A33924D000F4B35 /* phonebook.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,8 +58,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		147A6DC81A32D33300DC9CAC /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		147A6DC91A32D33300DC9CAC /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		54580BFB1A32B6EB00657F29 /* Fire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54580BFF1A32B6EB00657F29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54580C001A32B6EB00657F29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,12 +76,10 @@
 		54580C321A336A6000657F29 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		54A077D41A33C53700CB2E58 /* AddButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddButtonViewController.swift; sourceTree = "<group>"; };
 		54A077D61A33C54D00CB2E58 /* ButtonTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonTableViewController.swift; sourceTree = "<group>"; };
-		F2038A0A1A33A29100A874F7 /* TableViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController2.swift; sourceTree = "<group>"; };
+		F2038A0A1A33A29100A874F7 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		F24B12CE1A32D497000F4B35 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		F24B12D01A337FE9000F4B35 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		F24B12D21A33805F000F4B35 /* ContactManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactManager.swift; sourceTree = "<group>"; };
-		F24B12D41A33886F000F4B35 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		F24B12D71A33924D000F4B35 /* phonebook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = phonebook.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,12 +134,8 @@
 			children = (
 				F24B12CE1A32D497000F4B35 /* LocationManager.swift */,
 				54580C001A32B6EB00657F29 /* AppDelegate.swift */,
-				F24B12D61A33924D000F4B35 /* phonebook.xcdatamodeld */,
 				54580C051A32B6EB00657F29 /* ViewController.swift */,
-				F24B12D41A33886F000F4B35 /* TableViewController.swift */,
-				F2038A0A1A33A29100A874F7 /* TableViewController2.swift */,
-				147A6DC81A32D33300DC9CAC /* MasterViewController.swift */,
-				147A6DC91A32D33300DC9CAC /* DetailViewController.swift */,
+				F2038A0A1A33A29100A874F7 /* TableViewController.swift */,
 				54580C071A32B6EB00657F29 /* Main.storyboard */,
 				F24B12D01A337FE9000F4B35 /* ContactsViewController.swift */,
 				F24B12D21A33805F000F4B35 /* ContactManager.swift */,
@@ -343,19 +331,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				147A6DCA1A32D33300DC9CAC /* MasterViewController.swift in Sources */,
-				F2038A0B1A33A29100A874F7 /* TableViewController2.swift in Sources */,
+				F2038A0B1A33A29100A874F7 /* TableViewController.swift in Sources */,
 				F24B12D11A337FE9000F4B35 /* ContactsViewController.swift in Sources */,
 				F24B12CF1A32D497000F4B35 /* LocationManager.swift in Sources */,
 				54A077D51A33C53700CB2E58 /* AddButtonViewController.swift in Sources */,
 				54580C061A32B6EB00657F29 /* ViewController.swift in Sources */,
-				147A6DCB1A32D33300DC9CAC /* DetailViewController.swift in Sources */,
 				54580C011A32B6EB00657F29 /* AppDelegate.swift in Sources */,
 				F24B12D31A33805F000F4B35 /* ContactManager.swift in Sources */,
-				F24B12D51A33886F000F4B35 /* TableViewController.swift in Sources */,
 				54580C041A32B6EB00657F29 /* Fire.xcdatamodeld in Sources */,
 				54A077D71A33C54D00CB2E58 /* ButtonTableViewController.swift in Sources */,
-				F24B12D81A33924D000F4B35 /* phonebook.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,16 +600,6 @@
 			);
 			currentVersion = 54580C031A32B6EB00657F29 /* Fire.xcdatamodel */;
 			path = Fire.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-		F24B12D61A33924D000F4B35 /* phonebook.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				F24B12D71A33924D000F4B35 /* phonebook.xcdatamodel */,
-			);
-			currentVersion = F24B12D71A33924D000F4B35 /* phonebook.xcdatamodel */;
-			path = phonebook.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

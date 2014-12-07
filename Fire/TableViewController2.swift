@@ -11,12 +11,10 @@ import Foundation
 import UIKit
 import CoreData
 
-class TableViewController2: UITableViewController {
+class TableViewController2: UITableViewController, UITableViewDataSource, UITableViewDelegate {
     
+    // Create table view as soon as loads
     @IBOutlet var tblContacts: UITableView!
-    
-    // var objects = NSMutableArray()
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,18 +27,36 @@ class TableViewController2: UITableViewController {
         
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
         // self.navigationItem.rightBarButtonItem = addButton
+        
+        fetchLog()
+    }
+    
+    func fetchLog() {
+        //1
+        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let managedContext = appDelegate.managedObjectContext!
+        
+        //2
+        let fetchRequest = NSFetchRequest(entityName:"Entry")
+        
+        //3
+        var error: NSError?
+        
+        let fetchedResults = managedContext.executeFetchRequest(fetchRequest,
+            error: &error) as [NSManagedObject]?
+        
+        // Copying database into contact_entries
+        if let results = fetchedResults {
+            contact_entries = results
+        } else {
+            println("Could not fetch \(error), \(error!.userInfo)")
+        }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    /* func insertNewObject(sender: AnyObject) {
-    objects.insertObject(NSDate(), atIndex: 0)
-    let indexPath = NSIndexPath(forRow: 0, inSection: 0)
-    self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-    } */
     
     // MARK: - Segues
     
@@ -57,42 +73,30 @@ class TableViewController2: UITableViewController {
     
     // returning to view
     override func viewWillAppear(animated: Bool) {
-        //1
-        let appDelegate =
-        UIApplication.sharedApplication().delegate as AppDelegate
-        
-        let managedContext = appDelegate.managedObjectContext!
-        
-        //2
-        let fetchRequest = NSFetchRequest(entityName:"Entry")
-        
-        //3
-        var error: NSError?
-        
-        let fetchedResults =
-        managedContext.executeFetchRequest(fetchRequest,
-            error: &error) as [NSManagedObject]?
-        
-        if let results = fetchedResults {
-            contact_entries = results
-        } else {
-            println("Could not fetch \(error), \(error!.userInfo)")
-        }
-        
-        tblContacts.reloadData();
+        fetchLog()
     }
     
     // allow deletes
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.Delete)
         {
-            ContactMgr.contacts.removeAtIndex(indexPath.row)
-            // reload table data
+            //1
+            let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+            let managedContext = appDelegate.managedObjectContext!
+            
+            //2 - find contact_entries object user is trying to delete
+            let itemToDelete = contact_entries[indexPath.row]
+            
+            //3 - delete it from managedContext
+            managedContext.deleteObject(itemToDelete)
+            self.fetchLog()
+            
+            //4 - tell table view to reload table
             tblContacts.reloadData()
         }
     }
-    
-    // UITableViewDataSource
+
+    // MARK : UITableViewDataSource
     // tells table how many rows to render
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return contact_entries.count
@@ -101,14 +105,9 @@ class TableViewController2: UITableViewController {
     // build a cell
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Default")
-        
-        //        cell.textLabel.text = WaveMgr.waves[indexPath.row].name
-        //        cell.detailTextLabel!.text = WaveMgr.waves[indexPath.row].desc
-        //
+        // set title of cell to be the title of contact_entries
         cell.textLabel.text = contact_entries[indexPath.row].valueForKey("name") as String?
         cell.detailTextLabel!.text = contact_entries[indexPath.row].valueForKey("text") as String?
-        
-        
         return cell;
     }
     
@@ -117,16 +116,10 @@ class TableViewController2: UITableViewController {
         return 1
     }
     
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
-        
-        // let object = objects[indexPath.row] as NSDate
-        // cell.textLabel.text = object.description
-        return cell
-    }*/
-    
-    
+    // allows us to edit (in particular, delete) cells
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
     
 }
 

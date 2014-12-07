@@ -39,12 +39,11 @@ class ContactsViewController: UIViewController, UITextFieldDelegate {
             managedContext)
         
         let entry = NSManagedObject(entity: entity!,
-            insertIntoManagedObjectContext:managedContext)
+            insertIntoManagedObjectContext: managedContext)
         
         //3
         entry.setValue(text, forKey: "text")
         entry.setValue(name, forKey: "name")
-        
         
         
         //4
@@ -52,8 +51,8 @@ class ContactsViewController: UIViewController, UITextFieldDelegate {
         if !managedContext.save(&error) {
             println("Could not save \(error), \(error?.userInfo)")
         }
+        
         //5
-        //println("here")
         contact_entries.append(entry)
     }
 

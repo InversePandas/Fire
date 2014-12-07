@@ -171,7 +171,7 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <outlet property="tblContacts" destination="kfh-vp-UIL" id="xNt-4u-y3W"/>
+                        <outlet property="buttonTableView" destination="kfh-vp-UIL" id="ZDu-CZ-Sem"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yus-gb-yzz" userLabel="First Responder" sceneMemberID="firstResponder"/>

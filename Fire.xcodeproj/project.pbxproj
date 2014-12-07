@@ -23,7 +23,6 @@
 		F2038A0B1A33A29100A874F7 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2038A0A1A33A29100A874F7 /* TableViewController.swift */; };
 		F24B12CF1A32D497000F4B35 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24B12CE1A32D497000F4B35 /* LocationManager.swift */; };
 		F24B12D11A337FE9000F4B35 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24B12D01A337FE9000F4B35 /* ContactsViewController.swift */; };
-		F24B12D31A33805F000F4B35 /* ContactManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24B12D21A33805F000F4B35 /* ContactManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,7 +78,6 @@
 		F2038A0A1A33A29100A874F7 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		F24B12CE1A32D497000F4B35 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		F24B12D01A337FE9000F4B35 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
-		F24B12D21A33805F000F4B35 /* ContactManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +136,6 @@
 				F2038A0A1A33A29100A874F7 /* TableViewController.swift */,
 				54580C071A32B6EB00657F29 /* Main.storyboard */,
 				F24B12D01A337FE9000F4B35 /* ContactsViewController.swift */,
-				F24B12D21A33805F000F4B35 /* ContactManager.swift */,
 				54A077D41A33C53700CB2E58 /* AddButtonViewController.swift */,
 				54A077D61A33C54D00CB2E58 /* ButtonTableViewController.swift */,
 				54580C0A1A32B6EB00657F29 /* Images.xcassets */,
@@ -337,7 +334,6 @@
 				54A077D51A33C53700CB2E58 /* AddButtonViewController.swift in Sources */,
 				54580C061A32B6EB00657F29 /* ViewController.swift in Sources */,
 				54580C011A32B6EB00657F29 /* AppDelegate.swift in Sources */,
-				F24B12D31A33805F000F4B35 /* ContactManager.swift in Sources */,
 				54580C041A32B6EB00657F29 /* Fire.xcdatamodeld in Sources */,
 				54A077D71A33C54D00CB2E58 /* ButtonTableViewController.swift in Sources */,
 			);

@@ -53,7 +53,7 @@ class ContactsViewController: UIViewController, UITextFieldDelegate {
         }
         
         //5
-        contact_entries.append(entry)
+        // contact_entries.append(entry)
     }
 
     

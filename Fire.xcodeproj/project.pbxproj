@@ -20,6 +20,8 @@
 		54580C361A336A6000657F29 /* FireWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 54580C291A336A6000657F29 /* FireWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		54A077D51A33C53700CB2E58 /* AddButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A077D41A33C53700CB2E58 /* AddButtonViewController.swift */; };
 		54A077D71A33C54D00CB2E58 /* ButtonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A077D61A33C54D00CB2E58 /* ButtonTableViewController.swift */; };
+		54A72C561A345663007FA5E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54580C001A32B6EB00657F29 /* AppDelegate.swift */; };
+		54A72C571A345666007FA5E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54580C001A32B6EB00657F29 /* AppDelegate.swift */; };
 		F2038A0B1A33A29100A874F7 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2038A0A1A33A29100A874F7 /* TableViewController.swift */; };
 		F24B12CF1A32D497000F4B35 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24B12CE1A32D497000F4B35 /* LocationManager.swift */; };
 		F24B12D11A337FE9000F4B35 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24B12D01A337FE9000F4B35 /* ContactsViewController.swift */; };
@@ -343,6 +345,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54A72C571A345666007FA5E5 /* AppDelegate.swift in Sources */,
 				54580C1A1A32B6EB00657F29 /* FireTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,6 +354,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54A72C561A345663007FA5E5 /* AppDelegate.swift in Sources */,
 				54580C311A336A6000657F29 /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

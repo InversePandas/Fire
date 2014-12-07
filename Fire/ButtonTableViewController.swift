@@ -176,7 +176,7 @@ class ButtonTableViewController: UITableViewController, MFMessageComposeViewCont
         //        cell.textLabel.text = WaveMgr.waves[indexPath.row].name
         //        cell.detailTextLabel!.text = WaveMgr.waves[indexPath.row].desc
         //
-        cell.textLabel.text = contact_entries[indexPath.row].valueForKey("buttonName") as String?
+        cell.textLabel!.text = contact_entries[indexPath.row].valueForKey("buttonName") as String?
         cell.detailTextLabel!.text = contact_entries[indexPath.row].valueForKey("buttonPhoneNumbers") as String?
         
         return cell;

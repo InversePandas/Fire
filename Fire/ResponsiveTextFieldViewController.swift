@@ -73,7 +73,13 @@ class ResponsiveTextFieldViewController : UIViewController
         
         var targetTextFieldLowerPoint: CGPoint = CGPointMake(self.activeTextField!.frame.origin.x, self.keyboardFrame.origin.y - kPreferredTextFieldToKeyboardOffset)
         
-        var targetPointOffset: CGFloat = targetTextFieldLowerPoint.y - convertedTextFieldLowerPoint.y
+        //var targetPointOffset: CGFloat = targetTextFieldLowerPoint.y - convertedTextFieldLowerPoint.y
+        
+        //println(targetPointOffset)
+        
+        var targetPointOffset: CGFloat = -20.0
+        println(targetPointOffset)
+        
         var adjustedViewFrameCenter: CGPoint = CGPointMake(self.view.center.x, self.view.center.y + targetPointOffset)
         
         UIView.animateWithDuration(0.2, animations:  {

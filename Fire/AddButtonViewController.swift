@@ -11,7 +11,7 @@ import Foundation
 import UIKit
 import CoreData
 
-class AddButtonViewController: UIViewController, UITextFieldDelegate {
+class AddButtonViewController: ResponsiveTextFieldViewController, UITextFieldDelegate {
     
     @IBOutlet var txtName:UITextField!
     

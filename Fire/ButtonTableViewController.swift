@@ -190,7 +190,7 @@ class ButtonTableViewController: UITableViewController, MFMessageComposeViewCont
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Default")
 
-        cell.textLabel.text = buttons[indexPath.row].valueForKey("buttonName") as String?
+        cell.textLabel!.text = buttons[indexPath.row].valueForKey("buttonName") as String?
         cell.detailTextLabel!.text = buttons[indexPath.row].valueForKey("buttonPhoneNumbers") as String?
         
         return cell;

@@ -239,7 +239,6 @@
 			isa = PBXGroup;
 			children = (
 				F2EFE2101A3431A100B21793 /* fire.JPG */,
-				F2EFE23C1A343D9900B21793 /* add.png */,
 				F2EFE2111A3431A100B21793 /* firebutton.png */,
 				F2EFE2481A34501600B21793 /* back.png */,
 				F2EFE2461A344FAE00B21793 /* back.png */,
@@ -271,6 +270,7 @@
 				F2EFE23E1A343DF600B21793 /* people.png */,
 				F2EFE2401A343E1400B21793 /* add.png */,
 				F2EFE2191A3431A100B21793 /* iphone.jpeg */,
+				F2EFE2401A343E1400B21793 /* add.png */,
 				F2EFE21A1A3431A100B21793 /* iphone2x.jpeg */,
 				F2EFE21B1A3431A100B21793 /* iTunesArtwork.png */,
 				F2EFE2341A34337400B21793 /* fire_button_large.png */,

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="M4Y-Lb-cyx">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Today View Controller-->
@@ -16,10 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="37"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CSb-pm-JMX">
-                                <rect key="frame" x="128" y="4" width="81" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CSb-pm-JMX">
+                                <rect key="frame" x="111" y="0.0" width="98" height="37"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Launch Fire">
+                                <state key="normal" title="Fire!">
                                     <color key="titleColor" red="1" green="0.9810744767908347" blue="0.95912529050370288" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -30,7 +31,9 @@
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="CSb-pm-JMX" secondAttribute="centerY" id="OSG-jV-I7Q"/>
+                            <constraint firstItem="CSb-pm-JMX" firstAttribute="height" secondItem="S3S-Oj-5AN" secondAttribute="height" id="PJs-XO-fEZ"/>
                             <constraint firstAttribute="centerX" secondItem="CSb-pm-JMX" secondAttribute="centerX" id="U23-vi-2zK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CSb-pm-JMX" secondAttribute="trailing" constant="95" id="p0f-is-uEP"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>

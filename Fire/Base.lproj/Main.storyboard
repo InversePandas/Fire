@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uXU-kU-ceU">
-                                <rect key="frame" x="278" y="183" width="45" height="78"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uXU-kU-ceU">
+                                <rect key="frame" x="100" y="120" width="400" height="336"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="360" id="MG1-iT-7AH"/>
                                     <constraint firstAttribute="width" constant="400" id="nlT-qi-c9H"/>
@@ -49,35 +49,7 @@
                                     </mask>
                                 </variation>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXV-Uk-0sQ">
-                                <rect key="frame" x="486" y="97" width="119" height="52"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="43" id="gqh-vY-2aL"/>
-                                </constraints>
-                                <state key="normal" image="people.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="gqh-vY-2aL"/>
-                                    </mask>
-                                </variation>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H61-kg-Imj">
-                                <rect key="frame" x="473" y="56" width="119" height="52"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="43" id="r4B-yx-JmU"/>
-                                </constraints>
-                                <state key="normal" image="people.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="r4B-yx-JmU"/>
-                                    </mask>
-                                </variation>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Xy-Gp-QuS">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Xy-Gp-QuS">
                                 <rect key="frame" x="259" y="494" width="49" height="22"/>
                                 <state key="normal" image="swipe.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -162,7 +134,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yxe-ZN-wrl">
-                                <rect key="frame" x="480" y="349" width="69" height="80"/>
+                                <rect key="frame" x="508" y="430" width="35" height="35"/>
                                 <state key="normal" backgroundImage="add.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -403,8 +375,8 @@
                                     <outlet property="delegate" destination="cUn-jp-Yls" id="bCE-6e-d8I"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0j4-p1-63V">
-                                <rect key="frame" x="436" y="405" width="88" height="82"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0j4-p1-63V">
+                                <rect key="frame" x="489" y="376" width="35" height="35"/>
                                 <state key="normal" backgroundImage="add.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -413,8 +385,8 @@
                                     <segue destination="jHg-GI-mg3" kind="push" id="STB-eZ-99g"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="add contact " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGf-k1-kae">
-                                <rect key="frame" x="67" y="90" width="149" height="33"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="add contact " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGf-k1-kae">
+                                <rect key="frame" x="67" y="87" width="149" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <color key="textColor" red="0.50731425379999995" green="0.50731425379999995" blue="0.50731425379999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -529,9 +501,9 @@
         <image name="swipe.png" width="49" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mJ1-8Z-BoG"/>
-        <segue reference="kzm-Re-laY"/>
-        <segue reference="nA7-ko-om7"/>
+        <segue reference="ze5-zZ-h8e"/>
+        <segue reference="STB-eZ-99g"/>
+        <segue reference="Usv-rx-q2c"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.42900988520408168" green="0.42900988520408168" blue="0.42900988520408168" alpha="1" colorSpace="calibratedRGB"/>
 </document>

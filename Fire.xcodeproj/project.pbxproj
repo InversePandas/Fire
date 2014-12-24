@@ -196,13 +196,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		254252BC1A4A1150006194DA /* FireWidget */ = {
+		254252BC1A4A1150006194DA /* Fast Fire */ = {
 			isa = PBXGroup;
 			children = (
 				254252BF1A4A1150006194DA /* TodayViewController.swift */,
 				254252C11A4A1150006194DA /* MainInterface.storyboard */,
 				254252BD1A4A1150006194DA /* Supporting Files */,
 			);
+			name = "Fast Fire";
 			path = FireWidget;
 			sourceTree = "<group>";
 		};
@@ -237,7 +238,7 @@
 			children = (
 				54580BFD1A32B6EB00657F29 /* Fire */,
 				54580C161A32B6EB00657F29 /* FireTests */,
-				254252BC1A4A1150006194DA /* FireWidget */,
+				254252BC1A4A1150006194DA /* Fast Fire */,
 				254252CF1A4A35C2006194DA /* FireWidget */,
 				54580C2A1A336A6000657F29 /* Frameworks */,
 				54580BFC1A32B6EB00657F29 /* Products */,

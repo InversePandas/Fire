@@ -2,26 +2,18 @@
 //  TodayViewController.swift
 //  FireWidget
 //
-//  Created by Karen Kennedy on 12/6/14.
+//  Created by Luis Perez on 12/23/14.
 //  Copyright (c) 2014 Karen Kennedy. All rights reserved.
 //
 
-import Foundation
-
 import UIKit
-import MessageUI
 import NotificationCenter
-import CoreData
-import CoreLocation
 
 class TodayViewController: UIViewController, NCWidgetProviding {
-    
-    // used to store results from databse
-    var contact_entries = [NSManagedObject]()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // Do any additional setup after loading the view from its nib.
     }
     
     override func didReceiveMemoryWarning() {
@@ -39,14 +31,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         completionHandler(NCUpdateResult.NewData)
     }
     
-    // Launches the host application for this widget - for reference:
-    // http://stackoverflow.com/questions/24019820/today-app-extension-widget-tap-to-open-containing-app
-    // Input: sender (no idea what this is?)
-    // Output: None
     @IBAction func launchHostApp(sender: AnyObject) {
-        
-        // NSURL *pjURL = [NSURL URLWithString:@"fire://home"];
-        //NSURL pjURL = "fire://home"
-        //[self.extensionContext openURL:pjURL completionHandler:nil]
+        var appURL : NSURL = NSURL(fileURLWithPath: "fire://home")!
+        self.extensionContext?.openURL(appURL, completionHandler: nil)
     }
+    
 }

@@ -501,9 +501,9 @@
         <image name="swipe.png" width="49" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="nA7-ko-om7"/>
         <segue reference="ze5-zZ-h8e"/>
-        <segue reference="STB-eZ-99g"/>
-        <segue reference="Usv-rx-q2c"/>
+        <segue reference="kzm-Re-laY"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.42900988520408168" green="0.42900988520408168" blue="0.42900988520408168" alpha="1" colorSpace="calibratedRGB"/>
 </document>

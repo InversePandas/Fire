@@ -17,6 +17,70 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Actions
+        
+        // setting an action that will allow users to postpone waving
+        var firstAction:UIMutableUserNotificationAction = UIMutableUserNotificationAction()
+        firstAction.identifier = "FIRST_ACTION"
+        firstAction.title = "fine"
+        
+        // this means that we're setting this as a background notification (as opposed to a foreground notification)
+        // app doesn't have to launch in a background notification
+        firstAction.activationMode = UIUserNotificationActivationMode.Background
+        // get's a red background, means that there is something being deleted
+        firstAction.destructive = false
+        // depends on what you're doing - if we're gonna delete something, authentication should be required
+        firstAction.authenticationRequired = false
+        
+        
+        // setting an action that will allow a user to wave and reflect (takes them immediately to the app)
+        var secondAction:UIMutableUserNotificationAction = UIMutableUserNotificationAction()
+        secondAction.identifier = "SECOND_ACTION"
+        secondAction.title = "help"
+        
+        // this action is now in the foreground
+        secondAction.activationMode = UIUserNotificationActivationMode.Foreground
+        secondAction.destructive = true
+        secondAction.authenticationRequired = false
+        
+        // this is just a third
+        var thirdAction:UIMutableUserNotificationAction = UIMutableUserNotificationAction()
+        thirdAction.identifier = "THIRD_ACTION"
+        thirdAction.title = "Third Action"
+        
+        thirdAction.activationMode = UIUserNotificationActivationMode.Background
+        thirdAction.destructive = false
+        thirdAction.authenticationRequired = false
+        
+        
+        // category
+        // group the actions in a category
+        // minimal contexts can only display two actions (for example, accept or decline)
+        // default context can display up to four actions (for example, accept, decline, maybe, probably)
+        
+        var firstCategory:UIMutableUserNotificationCategory = UIMutableUserNotificationCategory()
+        firstCategory.identifier = "FIRST_CATEGORY"
+        
+        let defaultActions:NSArray = [firstAction, secondAction, thirdAction]
+        let minimalActions:NSArray = [firstAction, secondAction]
+        
+        firstCategory.setActions(defaultActions, forContext: UIUserNotificationActionContext.Default)
+        firstCategory.setActions(minimalActions, forContext: UIUserNotificationActionContext.Minimal)
+        
+        // NSSet of all our categories (just one in this case)
+        
+        let categories:NSSet = NSSet(objects: firstCategory)
+        
+        
+        // the different notifications we support, with alert as text and badge just being our app logo
+        let types:UIUserNotificationType = UIUserNotificationType.Alert | UIUserNotificationType.Badge
+        
+        let mySettings:UIUserNotificationSettings = UIUserNotificationSettings(forTypes: types, categories: categories)
+        
+        // prompts the user if he wants to use the notifications (the first time he enters the app)
+        UIApplication.sharedApplication().registerUserNotificationSettings(mySettings)
+        
         return true
     }
 

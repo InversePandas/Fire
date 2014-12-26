@@ -19,6 +19,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     var locationManager: CLLocationManager!
     var firstLocation: Bool = true
     var locData: CLLocationCoordinate2D!
+    var notificationSet: Bool = true
     
     // used to store results from databse
     var contact_entries = [NSManagedObject]()
@@ -34,6 +35,43 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        // setting a fire date for our notification
+        
+        let date_current = NSDate()
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components( .CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay | .CalendarUnitHour | .CalendarUnitMinute, fromDate: date_current)
+        let year = components.year
+        let month = components.month
+        let day = components.day
+        let hour = components.hour
+        let minutes = components.minute
+        
+        if notificationSet {
+            var dateComp:NSDateComponents = NSDateComponents()
+            dateComp.year = year;
+            dateComp.month = month;
+            dateComp.day = day;
+            dateComp.hour = hour;
+            dateComp.minute = (minutes + 1) % 60;
+            dateComp.timeZone = NSTimeZone.systemTimeZone()
+            
+            var calender:NSCalendar! = NSCalendar(calendarIdentifier: NSGregorianCalendar)
+            // defining our variable date made of our datecomponents shown above
+            var date:NSDate! = calender.dateFromComponents(dateComp)
+            
+            
+            var notification:UILocalNotification = UILocalNotification()
+            notification.category = "FIRST_CATEGORY"
+            notification.alertBody = "Are you doing ok? Swipe left to respond."
+            notification.fireDate = date
+            notification.repeatInterval = .CalendarUnitDay
+            
+            UIApplication.sharedApplication().scheduleLocalNotification(notification)
+            notificationSet = false;
+            
+        }
+        
         
         // load the location manager to start querying for data
         self.launchLocationManager()

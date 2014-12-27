@@ -18,12 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        // Actions
+        // Actions for Fire app notification
         
         // setting an action that will allow users to postpone waving
         var firstAction:UIMutableUserNotificationAction = UIMutableUserNotificationAction()
         firstAction.identifier = "FIRST_ACTION"
-        firstAction.title = "fine"
+        firstAction.title = "Fine"
         
         // this means that we're setting this as a background notification (as opposed to a foreground notification)
         // app doesn't have to launch in a background notification
@@ -37,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // setting an action that will allow a user to wave and reflect (takes them immediately to the app)
         var secondAction:UIMutableUserNotificationAction = UIMutableUserNotificationAction()
         secondAction.identifier = "SECOND_ACTION"
-        secondAction.title = "help"
+        secondAction.title = "Help"
         
         // this action is now in the foreground
         secondAction.activationMode = UIUserNotificationActivationMode.Foreground

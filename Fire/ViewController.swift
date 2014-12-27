@@ -12,6 +12,8 @@ import CoreLocation
 import CoreData
 import Foundation
 
+// URL for FireServer
+let FireURL: NSString = "http://actonadream.org/fireServer.php"
 
 class ViewController: UIViewController, MFMessageComposeViewControllerDelegate,  CLLocationManagerDelegate {
    
@@ -36,8 +38,10 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        // setting a fire date for our notification
+        // load the location manager to start querying for location data
+        self.launchLocationManager()
         
+        // setting a fire date for our notification
         let date_current = NSDate()
         let calendar = NSCalendar.currentCalendar()
         let components = calendar.components( .CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay | .CalendarUnitHour | .CalendarUnitMinute, fromDate: date_current)
@@ -71,10 +75,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             notificationSet = false;
             
         }
-        
-        
-        // load the location manager to start querying for data
-        self.launchLocationManager()
 
     }
     
@@ -84,9 +84,28 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         // Dispose of any resources that can be recreated.
     }
     
-    // Fire Button calls this function
+    /*  Fire Button calls this function which attempt to send a request to the server (if online) or a
+    *   text message to the list of contacts (if not online) for our single fire approach
+    *   This function is also called the first time we acquire a valid location for the user (as soon as the
+    *   app is launched.
+    */
     @IBAction func sendMessage(sender: AnyObject) {
-        self.presentViewController(self.constructMessageView(), animated: true, completion: nil)
+        // attempt contact with server to check internet connectivity
+        self.post(["type": "connection"], url: FireURL) { (succeeded: Bool, reply: NSDictionary) -> ()
+            in
+            // we have internet access, so send the request to the server
+            if (succeeded) {
+                self.sendMsgToServer(self.constructTxtMsg(), phoneList: self.getContactNumbers())
+                
+                // TODO - set up the app to automatically update location (ie, send this message again) every X minutes/second/etc (just call this function again after a delay????)
+            }
+            // ask the user to send the message because we have no internet access
+            else {
+                self.presentViewController(self.constructMessageView(), animated: true, completion: nil)
+                
+                // TODO - should alert user that location will NOT be updated automatically
+            }
+        }
     }
     
     /*********************** MFMessageComposeViewController functions **********************/
@@ -117,14 +136,43 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         self.locData = manager.location.coordinate
         
         // first time we see the location
-        if (firstLocation) {
+        if (self.firstLocation) {
             // don't present the view again unless it is the first location
-           firstLocation = false
-            // self.presentViewController(constructMessageView(), animated: false, completion: nil)
+            self.firstLocation = false
+            // self.sendMessage([])
         }
     }
 
     /*********************** Useful Helper Functions **********************/
+    /*
+    *   Connects to remote server and sends the messageText to the phone numbers in the phoneList
+    *   (or attempts to, the server currently does nothing)
+    */
+    func sendMsgToServer(messageText: String, phoneList: NSMutableArray) -> Bool {
+     
+        // sending
+        self.post(["type": "message", "text": messageText, "phones": phoneList.componentsJoinedByString(",")], url: FireURL) { (succeeded: Bool, response: NSDictionary) -> () in
+
+            var alert = UIAlertController(title: "Success!", message: "Empty!", preferredStyle: UIAlertControllerStyle.Alert)
+            if(succeeded) {
+                alert.title = "Success!"
+                alert.message = response["msg"] as? String
+                // we can also parse the server response here using response["json"] information
+            }
+            else {
+                alert.title = "Failed : ("
+                alert.message = response["msg"] as? String
+            }
+         
+            // Move to the UI thread
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                // Show the alert
+                self.presentViewController(alert, animated: true, completion: nil)
+            })
+        }
+ 
+        return true
+    }
     
     /*
     *  Connects to the contact database and returns an array of phone
@@ -183,8 +231,8 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     func constructMessageView() -> MFMessageComposeViewController {
         var messageVC = MFMessageComposeViewController()
         
-        messageVC.body = constructTxtMsg()
-        messageVC.recipients = getContactNumbers()
+        messageVC.body = self.constructTxtMsg()
+        messageVC.recipients = self.getContactNumbers()
         messageVC.messageComposeDelegate = self;
         
         return messageVC
@@ -206,7 +254,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     *   Source: http://jamesonquave.com/blog/making-a-post-request-in-swift/
     *   Sends a post request with params to the specified url
     */
-    func post(params : Dictionary<String, String>, url : String, postCompleted : (succeeded: Bool, msg: String) -> ()) {
+    func post(params : Dictionary<String, String>, url : String, postCompleted : (succeeded: Bool, response: NSDictionary) -> ()) {
         var request = NSMutableURLRequest(URL: NSURL(string: url)!)
         var session = NSURLSession.sharedSession()
         request.HTTPMethod = "POST"
@@ -230,7 +278,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
                 println(err!.localizedDescription)
                 let jsonStr = NSString(data: data, encoding: NSUTF8StringEncoding)
                 println("Error could not parse JSON: '\(jsonStr)'")
-                postCompleted(succeeded: false, msg: "Error")
+                postCompleted(succeeded: false, response: ["msg": "Error in response."])
             }
             else {
                 // The JSONObjectWithData constructor didn't return an error. But, we should still
@@ -238,16 +286,17 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
                 if let parseJSON = json {
                     // Okay, the parsedJSON is here, let's get the value for 'success' out of it
                     if let success = parseJSON["success"] as? Bool {
-                        println("Succes: \(success)")
-                        postCompleted(succeeded: success, msg: "Logged in.")
+                        println("Success: \(success)")
+                        postCompleted(succeeded: success, response: ["json" : parseJSON,
+                                                                     "msg": "Connection Successful"])
                     }
                     return
                 }
                 else {
-                    // Woa, okay the json object was nil, something went worng. Maybe the server isn't running?
+                    // Woa, okay the json object was nil, something went wrong. Maybe the server isn't running?
                     let jsonStr = NSString(data: data, encoding: NSUTF8StringEncoding)
                     println("Error could not parse JSON: \(jsonStr)")
-                    postCompleted(succeeded: false, msg: "Error")
+                    postCompleted(succeeded: false, response: ["msg": "Error in connection"])
                 }
             }
         })

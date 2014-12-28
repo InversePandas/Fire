@@ -15,6 +15,9 @@ import Foundation
 // URL for FireServer
 let FireURL: NSString = "http://actonadream.org/fireServer.php"
 
+// How often do we update location when contacting server
+let UpdateInterval: NSTimeInterval = 10*60 // every 10 minutes
+
 class ViewController: UIViewController, MFMessageComposeViewControllerDelegate,  CLLocationManagerDelegate {
    
     // (Lat,Long) of user is stored here as soon as it is received
@@ -25,6 +28,9 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     
     // used to store results from databse
     var contact_entries = [NSManagedObject]()
+    
+    // used to update server with new user position
+    var timer: NSTimer? = nil
     
     /*********************** UIViewController Functions **********************/
     
@@ -97,11 +103,20 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             if (succeeded) {
                 self.sendMsgToServer(self.constructTxtMsg(), phoneList: self.getContactNumbers())
                 
-                // TODO - set up the app to automatically update location (ie, send this message again) every X minutes/second/etc (just call this function again after a delay????)
+                // sendMessage again every UpdateInterval
+                self.timer = NSTimer.scheduledTimerWithTimeInterval(UpdateInterval, target: self, selector: Selector("sendMessage"), userInfo: nil, repeats: false)
+                
+                // TODO - alert the user that this is happening
             }
             // ask the user to send the message because we have no internet access
             else {
                 self.presentViewController(self.constructMessageView(), animated: true, completion: nil)
+                
+                // turn off the NSTimer if existent
+                if (self.timer != nil) {
+                    self.timer!.invalidate()
+                    self.timer = nil
+                }
                 
                 // TODO - should alert user that location will NOT be updated automatically
             }

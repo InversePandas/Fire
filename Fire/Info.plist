@@ -36,7 +36,9 @@
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Give us permission to use your device&apos;s location</string>
+	<string>Help us inform your loved ones where you are.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Help us inform your loved ones where you are.</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

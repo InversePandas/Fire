@@ -154,7 +154,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         if (self.firstLocation) {
             // don't present the view again unless it is the first location
             self.firstLocation = false
-            // self.sendMessage([])
+            self.sendMessage([])
         }
     }
 
@@ -258,11 +258,13 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     *   coordinates can be stored in self.locationManager
     */
     func launchLocationManager () -> Void {
-        self.locationManager = CLLocationManager()
-        self.locationManager.delegate = self
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        self.locationManager.requestAlwaysAuthorization()
-        self.locationManager.startUpdatingLocation()
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        // request authorization from the user
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
     }
     
     /* 

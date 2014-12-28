@@ -22,8 +22,9 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
    
     // (Lat,Long) of user is stored here as soon as it is received
     var locationManager: CLLocationManager!
-    var firstLocation: Bool = true
+    var firstLocation: Bool = false // set to false when running in simulator, true otherwise
     var locData: CLLocationCoordinate2D!
+    var locCount: integer_t = 0
     var notificationSet: Bool = true
     
     // used to store results from databse
@@ -149,6 +150,8 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     func locationManager(manager:CLLocationManager, didUpdateLocations locations:[AnyObject]) {
         // store the updated location in the class
         self.locData = manager.location.coordinate
+        self.locCount++
+        println("Location was updated successfully to coordinates \(self.locData.latitude), \(self.locData.longitude). Total updates: \(self.locCount).")
         
         // first time we see the location
         if (self.firstLocation) {
